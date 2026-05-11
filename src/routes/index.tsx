@@ -448,6 +448,15 @@ const LP_CSS = `
 .lp-steps { background:#fff; padding:22px 24px; text-align:center; border-bottom:1px solid rgba(204,181,151,.2); }
 .lp-steps p { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:500; color:var(--text-mid); font-style:italic; }
 .lp-steps p strong { color:var(--brown); font-style:normal; font-weight:600; }
+.lp-steps-swipe { margin-top:14px; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:500; color:var(--text-dark); display:flex; align-items:center; justify-content:center; gap:10px; font-style:normal; }
+.lp-arrow-blink { color:var(--brown); font-size:18px; font-weight:700; animation:lpArrowBlink 1s ease-in-out infinite; }
+@keyframes lpArrowBlink { 0%,100%{opacity:.2} 50%{opacity:1} }
+.lp-scroll-caption { background:var(--c2); padding:0 5% 22px; text-align:center; font-size:13px; color:var(--text-mid); font-style:italic; max-width:760px; margin:0 auto; }
+
+.lp-checks { background:#fff; padding:24px 5% 56px; }
+.lp-checks-grid { max-width:720px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
+.lp-check-item { display:flex; align-items:center; gap:10px; font-family:'Montserrat',sans-serif; font-size:13px; color:var(--text-dark); }
+.lp-check-icon { width:22px; height:22px; border-radius:50%; background:#1e88e5; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
 
 .lp-scroll-wrap { background:var(--c2); padding:28px 0; overflow:hidden; position:relative; }
 .lp-scroll-wrap::before,.lp-scroll-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; }
