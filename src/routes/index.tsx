@@ -451,7 +451,7 @@ const LP_CSS = `
 .lp-steps-swipe { margin-top:14px; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:500; color:var(--text-dark); display:flex; align-items:center; justify-content:center; gap:10px; font-style:normal; }
 .lp-arrow-blink { color:var(--brown); font-size:18px; font-weight:700; animation:lpArrowBlink 1s ease-in-out infinite; }
 @keyframes lpArrowBlink { 0%,100%{opacity:.2} 50%{opacity:1} }
-.lp-scroll-caption { background:var(--c2); padding:0 5% 22px; text-align:center; font-size:13px; color:var(--text-mid); font-style:italic; max-width:760px; margin:0 auto; }
+.lp-scroll-caption { background:var(--c2); padding:0 5% 24px; text-align:center; font-size:13px; color:var(--text-mid); font-style:italic; }
 
 .lp-checks { background:#fff; padding:24px 5% 56px; }
 .lp-checks-grid { max-width:720px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
