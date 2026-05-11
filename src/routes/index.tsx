@@ -78,8 +78,8 @@ function Index() {
           </div>
           <div className="lp-hero-content">
             <div className="lp-hero-eyebrow">Estheré · Tecnología de Triple Acción</div>
-            <h1>Kit Lifting Botox: Recupera tu juventud.<br />Logra una piel más lisa, firme y radiante en solo 14 días.</h1>
-            <a href="#precio" className="btn btn-gold btn-pulse">QUIERO MI KIT AHORA</a>
+            <h1>Kit Efecto Tensor 360: O segredo para uma aparência que ignora o tempo e revela uma pele visivelmente mais Lisa, Firme e Radiante com apenas 2 minutos por dia</h1>
+            <a href="#precio" className="btn btn-gold btn-pulse">QUIERO MI EFECTO TENSOR 360</a>
             <p className="lp-hero-guarantee">Garantía de satisfacción o te devolvemos tu dinero.</p>
           </div>
         </section>
@@ -87,6 +87,11 @@ function Index() {
         {/* STEPS */}
         <div className="lp-steps">
           <p><strong>3 pasos</strong>, 2 minutos y resultados extraordinarios</p>
+          <p className="lp-steps-swipe">
+            <span className="lp-arrow-blink">‹</span>
+            Desliza la barra sobre la foto para ver la Ingeniería Facial en acción
+            <span className="lp-arrow-blink">›</span>
+          </p>
         </div>
 
         {/* SCROLL INFINITO */}
@@ -99,23 +104,23 @@ function Index() {
             ))}
           </div>
         </div>
+        <p className="lp-scroll-caption">Transformação visível após 30 a 60 dias de uso constante. A evolução da textura varia conforme o ritmo único de cada pele.</p>
 
         {/* BENEFITS SUBTITLE + CIRCLES */}
         <section className="lp-benefits-sub">
-          <h2>Une el relleno del ácido hialurónico, el efecto lifting del retinol y el alisado de los parches de silicona en un ritual de 2 minutos, con resultados de nivel clínico por una fracción del precio.</h2>
+          <h2>Ingeniería Facial: Oro 24K, Ácido Hialurónico, Niacinamida y Colágeno unidos al Sellado Dérmico. Resultados profesionales y piel visiblemente más lisa en 2 minutos, por una fracción del costo.</h2>
         </section>
-        <section className="lp-circles">
-          <div className="lp-circles-row">
+        <section className="lp-checks">
+          <div className="lp-checks-grid">
             {[
-              { label: "Relleno", seed: "relleno" },
-              { label: "Alisado", seed: "alisado" },
-              { label: "Firmeza", seed: "firmeza" },
-            ].map((c) => (
-              <div key={c.label} className="lp-circle-item">
-                <div className="lp-circle-photo">
-                  <img src={`https://picsum.photos/seed/${c.seed}/320/320`} alt={c.label} />
-                </div>
-                <div className="lp-circle-label">{c.label}</div>
+              "Efecto de Firmeza Inmediata",
+              "Alisado Visible de Textura",
+              "Relleno Hidratante Profundo",
+              "Acabado Profesional en Casa",
+            ].map((t) => (
+              <div key={t} className="lp-check-item">
+                <span className="lp-check-icon">✓</span>
+                <span>{t}</span>
               </div>
             ))}
           </div>
@@ -123,11 +128,10 @@ function Index() {
 
         {/* PRICE CTA */}
         <section id="precio" className="lp-price-cta">
-          <div className="lp-price-old">Antes: $ 49.990</div>
+          <div className="lp-price-old">Antes: $ 44.990</div>
           <div className="lp-price-new">$ 34.990</div>
-          <div className="lp-price-badge">🎉 Ahorras $ 15.000 — 30% OFF</div>
           <div>
-            <a href="#" className="btn btn-gold btn-pulse">Quiero mi Lifting Botox</a>
+            <a href="#" className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor 360</a>
           </div>
           <div className="lp-pay-icons">
             <span>🚚 Envío gratis</span>
@@ -444,6 +448,15 @@ const LP_CSS = `
 .lp-steps { background:#fff; padding:22px 24px; text-align:center; border-bottom:1px solid rgba(204,181,151,.2); }
 .lp-steps p { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:500; color:var(--text-mid); font-style:italic; }
 .lp-steps p strong { color:var(--brown); font-style:normal; font-weight:600; }
+.lp-steps-swipe { margin-top:14px; font-family:'Montserrat',sans-serif; font-size:15px; font-weight:500; color:var(--text-dark); display:flex; align-items:center; justify-content:center; gap:10px; font-style:normal; }
+.lp-arrow-blink { color:var(--brown); font-size:18px; font-weight:700; animation:lpArrowBlink 1s ease-in-out infinite; }
+@keyframes lpArrowBlink { 0%,100%{opacity:.2} 50%{opacity:1} }
+.lp-scroll-caption { background:var(--c2); padding:0 5% 24px; text-align:center; font-size:13px; color:var(--text-mid); font-style:italic; }
+
+.lp-checks { background:#fff; padding:24px 5% 56px; }
+.lp-checks-grid { max-width:720px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
+.lp-check-item { display:flex; align-items:center; gap:10px; font-family:'Montserrat',sans-serif; font-size:13px; color:var(--text-dark); }
+.lp-check-icon { width:22px; height:22px; border-radius:50%; background:#1e88e5; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
 
 .lp-scroll-wrap { background:var(--c2); padding:28px 0; overflow:hidden; position:relative; }
 .lp-scroll-wrap::before,.lp-scroll-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; }
