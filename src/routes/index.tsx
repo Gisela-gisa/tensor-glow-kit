@@ -24,11 +24,20 @@ const TESTIMONIALS = [
 ];
 
 const FAQS = [
-  { q: "¿Cuánto tiempo tarda en llegar?", a: "Entre 10 y 14 días hábiles a todo Chile, con envío gratis." },
-  { q: "¿Es seguro para piel sensible?", a: "Sí. Los activos están dosificados para uso diario y los parches son hipoalergénicos." },
-  { q: "¿Cuántas veces puedo reutilizar el parche?", a: "Hasta 30 veces siguiendo las instrucciones de limpieza incluidas." },
-  { q: "¿Cuándo veo resultados?", a: "La mayoría de nuestras clientas notan firmeza y luminosidad en los primeros 14 días." },
-  { q: "¿Tienen garantía?", a: "Sí, 30 días de garantía de satisfacción o te devolvemos tu dinero." },
+  { q: "¿Para qué tipo de piel es el Kit Lifting Botox?", a: "El kit está formulado para pieles maduras, secas o con signos de envejecimiento. Es apto para pieles sensibles. Si tienes alguna condición dermatológica específica, consulta con tu médico antes de usar." },
+  { q: "¿Cuándo empezaré a ver resultados?", a: "La mayoría de las usuarias reportan mejoras visibles en textura e hidratación desde los primeros 3 días. Los resultados más notorios en firmeza y reducción de arrugas se observan entre los días 10 y 14 de uso continuo." },
+  { q: "¿Cómo funciona el ciclo de 72 horas?", a: "El ciclo es simple: durante el día aplicas el ácido hialurónico (volumen y relleno), la primera noche usas el retinol (renovación y firmeza), y la segunda noche colocas el parche de silicona (sellado y alisado mecánico). Luego se repite." },
+  { q: "¿El retinol irrita la piel?", a: "Nuestra formulación de retinol está diseñada para minimizar la irritación. Te recomendamos comenzar usándolo 2 veces por semana e ir aumentando la frecuencia gradualmente. Si notas enrojecimiento excesivo, reduce la frecuencia." },
+  { q: "¿Cuánto demora el envío?", a: "El tiempo estimado de entrega es de 10 a 14 días. El envío es completamente gratis a todo Chile." },
+  { q: "¿Cómo funciona la garantía de 30 días?", a: "Si seguiste el protocolo correctamente durante 30 días y no estás satisfecha con los resultados, solo debes contactarnos y devolver los frascos (incluso vacíos) para recibir el reembolso completo del valor del producto." },
+  { q: "¿Puedo usar el kit si estoy embarazada o lactando?", a: "El retinol no está recomendado durante el embarazo o la lactancia. En ese caso, consulta con tu médico antes de usar el kit completo. El ácido hialurónico y el parche de silicona son seguros para uso externo." },
+];
+
+const WHY_CARDS = [
+  { n: "01", t: "Tecnología de 3 etapas", d: "☀️ Ácido hialurónico · 🌙 Retinol · 🌙 Parche de silicona. Piel más lisa, firme y rejuvenecida al despertar." },
+  { n: "02", t: "Alisado mecánico activo", d: 'El parche actúa como una "plancha biológica", evitando pliegues del sueño y suavizando las arrugas.' },
+  { n: "03", t: "Sistema facial 72h", d: "Día (volumen), noche 1 (renovación) y noche 2 (sellado). Piel en recuperación constante." },
+  { n: "04", t: "Sin agujas, sin dolor", d: "Efecto clínica estética en casa, en solo 2 minutos al día." },
 ];
 
 function Index() {
@@ -212,11 +221,123 @@ function Index() {
           </div>
         </section>
 
+        {/* REELS */}
+        <section className="sec inner">
+          <div className="lp-reel-carousel">
+            {[1,2,3,4,5,6].map((n) => (
+              <div key={n} className="lp-reel-item">
+                <img src={`https://picsum.photos/seed/reel${n}/320/560`} alt={`reel 0${n}`} />
+                <div className="lp-reel-tag">🎬 reel 0{n}</div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center" style={{ marginTop: 24 }}>
+            <a href="#precio" className="btn btn-gold">Recuperar mi juventud</a>
+          </div>
+        </section>
+
+        {/* WHY SMART CHOICE */}
+        <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
+          <div className="subtitle">La elección inteligente</div>
+          <div className="gold-divider" />
+          <h2>¿Por qué el Kit Lifting Botox es la elección inteligente para tu piel?</h2>
+          <p style={{ maxWidth: 640, margin: "12px auto 0", color: "var(--text-mid)" }}>Donde la cosmética avanzada se une con la ingeniería facial para resultados reales.</p>
+          <div className="lp-why-grid">
+            {WHY_CARDS.map((c) => (
+              <div key={c.n} className="lp-why-card">
+                <div className="lp-why-num">{c.n}</div>
+                <h4>{c.t}</h4>
+                <p>{c.d}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ marginTop: 32 }}>
+            <a href="#precio" className="btn btn-gold">Quiero el mío</a>
+          </div>
+        </section>
+
+        {/* RESULTADOS REALES */}
+        <section className="sec inner text-center">
+          <div className="subtitle">Resultados reales</div>
+          <div className="gold-divider" />
+          <h2>Ellas ya recibieron su Kit Lifting Botox y están logrando resultados de clínica, en solo 2 minutos al día</h2>
+          <div className="lp-gallery15">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="lp-g-item">
+                <img src={`https://picsum.photos/seed/res${i}/400/520`} alt="" />
+              </div>
+            ))}
+          </div>
+          <div style={{ marginTop: 24 }}>
+            <a href="#precio" className="btn btn-dark">Quiero el mío ahora</a>
+          </div>
+        </section>
+
+        {/* CICLO QUOTE */}
+        <section className="sec inner text-center" style={{ background: "var(--c2)" }}>
+          <div className="subtitle">El ciclo que transforma</div>
+          <div className="gold-divider" />
+          <h2 style={{ fontStyle: "italic", maxWidth: 720, margin: "0 auto" }}>
+            "Rellena de día, renueva de noche y alisa mientras duermes:<br />el ciclo completo para una piel más joven."
+          </h2>
+        </section>
+
+        {/* CIENCIA */}
+        <section className="lp-ciencia">
+          <div className="subtitle">La ciencia de una clínica, la libertad de tu hogar</div>
+          <div className="gold-divider" />
+          <h2>¿Por qué elegir entre el dolor y los resultados?</h2>
+          <p>Las agujas son temporales, costosas y, seamos honestas, invasivas. No deberías tener que programar tu vida en torno a una cita médica para sentirte bella.</p>
+          <p>El kit lifting botox es tu ritual de 2 minutos. Es el placer de ver cómo tu piel recupera su firmeza mientras te preparas para el día. Sin hinchazón, sin hematomas — solo tú, más joven, en tu propio espejo.</p>
+        </section>
+
+        {/* FOUNDER */}
+        <section className="lp-founder">
+          <div className="lp-two-col inner">
+            <div className="lp-img-block">
+              <img src="https://picsum.photos/seed/founder/700/800" alt="Ester, fundadora" />
+            </div>
+            <div>
+              <div className="subtitle">La historia detrás</div>
+              <div className="gold-divider" style={{ margin: "16px 0" }} />
+              <h2 style={{ fontStyle: "italic" }}>"Rellena de día, renueva de noche y alisa mientras duermes"</h2>
+              <p style={{ marginTop: 18 }}>Soy Ester. Detrás de Estheré hay una historia real: después de no encontrar resultados con nada más, usé mi formación como dermatóloga y estudié, probé y combiné diferentes productos hasta encontrar los 3 ideales que, por sus efectos de clínica, llamo tecnología de triple acción.</p>
+              <p style={{ marginTop: 12 }}>Así nació el Kit Lifting Botox — estos productos que me devolvieron la autoestima y me hicieron sentir por fuera como ya me sentía por dentro. Hoy lo comparto con mujeres chilenas, porque ellas merecen sentirse más bellas y jóvenes.</p>
+            </div>
+          </div>
+
+          <div className="lp-guarantee" style={{ marginTop: 40, maxWidth: 880, marginLeft: "auto", marginRight: "auto" }}>
+            <div className="lp-guar-icon"><img src="https://picsum.photos/seed/seal2/140/140" alt="garantía" /></div>
+            <div>
+              <h4>Compromiso Estheré: Satisfacción garantizada en 30 días</h4>
+              <p>Estamos tan seguras de nuestra Tecnología de Triple Acción que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
+              <div style={{ marginTop: 16 }}>
+                <a href="#precio" className="btn btn-gold">Quiero con garantía</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROXIMO PASO */}
+        <section className="lp-final-reel">
+          <div className="lp-final-reel-bg">
+            <img src="https://picsum.photos/seed/proximo/1400/700" alt="" />
+          </div>
+          <div className="lp-final-reel-content">
+            <div className="subtitle" style={{ color: "var(--gold)" }}>Tu próximo paso</div>
+            <div className="gold-divider" />
+            <h2>"El testimonio de Isabel se repite en más de 5.000 chilenas… el tuyo puede ser el próximo."</h2>
+            <div style={{ marginTop: 24 }}>
+              <a href="#precio" className="btn btn-gold btn-pulse">Quiero ese resultado</a>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="sec inner text-center">
-          <div className="subtitle">Preguntas frecuentes</div>
+          <div className="subtitle">Resolvemos tus dudas</div>
           <div className="gold-divider" />
-          <h2>Todo lo que necesitas saber</h2>
+          <h2>Preguntas frecuentes</h2>
           <div className="lp-faq-list">
             {FAQS.map((f, i) => (
               <div key={i} className={`lp-faq-item ${openFaq === i ? "open" : ""}`}>
@@ -230,14 +351,26 @@ function Index() {
           </div>
         </section>
 
+        {/* CIERRE FINAL */}
+        <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
+          <div className="subtitle">El inicio de tu transformación</div>
+          <div className="gold-divider" />
+          <h2>Kit Lifting Botox: resultados de clínica en casa, rejuvenece con la tecnología que solo la triple acción ofrece.</h2>
+          <p style={{ marginTop: 12, color: "var(--text-mid)" }}>2 minutos al día · ciclo continuo de 3 días</p>
+          <div style={{ marginTop: 24 }}>
+            <a href="#precio" className="btn btn-gold btn-pulse">Quiero mi Lifting Botox</a>
+          </div>
+        </section>
+
         {/* PAY BAR */}
         <div className="lp-pay-bar">
-          <p>Pagos seguros</p>
+          <p>🔒 Compra 100% segura · Envío gratis a todo Chile</p>
           <div className="lp-pay-methods">
             <span className="lp-pay-badge">VISA</span>
             <span className="lp-pay-badge">MASTERCARD</span>
             <span className="lp-pay-badge">WEBPAY</span>
             <span className="lp-pay-badge">SERVIPAG</span>
+            <span className="lp-pay-badge">🛡️ GARANTÍA 30 DÍAS</span>
           </div>
         </div>
 
@@ -245,23 +378,31 @@ function Index() {
         <footer className="lp-footer">
           <div className="lp-footer-brand">ESTHERÉ</div>
           <div className="lp-footer-links">
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Envíos</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de devoluciones</a>
+            <a href="#">Preguntas frecuentes</a>
             <a href="#">Contacto</a>
           </div>
           <div className="lp-footer-disc">
-            © {new Date().getFullYear()} Estheré. Todos los derechos reservados. Resultados pueden variar según el tipo de piel.
+            © {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile
+            <br /><br />
+            Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar. Las imágenes y testimonios son de usuarias reales y no garantizan resultados idénticos para todos los casos.
+            <br /><br />
+            Este sitio web no es parte de Facebook™, Instagram™ ni Meta Platforms Inc. FACEBOOK™ es una marca registrada de META PLATFORMS, INC.
+            <br /><br />
+            Al realizar una compra, aceptas nuestros Términos y Condiciones y Política de Privacidad. Para devoluciones, escríbenos dentro de los 30 días posteriores a la recepción del producto.
           </div>
         </footer>
       </div>
 
       {/* STICKY */}
       <div className={`lp-sticky ${showSticky ? "visible" : ""}`}>
-        <div className="lp-sticky-price">
-          <span>$ 49.990</span>$ 34.990
+        <div>
+          <div className="lp-sticky-price"><span>$ 49.990</span>$ 34.990</div>
+          <div className="lp-sticky-note">🎉 Ahorras $15.000 — 30% OFF</div>
         </div>
-        <a href="#precio" className="btn btn-gold" style={{ padding: "12px 22px", fontSize: 13 }}>Quiero mi Kit</a>
+        <a href="#precio" className="btn btn-gold" style={{ padding: "12px 22px", fontSize: 13 }}>Quiero el mío</a>
       </div>
     </>
   );
