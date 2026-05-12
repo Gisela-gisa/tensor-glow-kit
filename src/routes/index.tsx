@@ -5,6 +5,32 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const IMG = {
+  pricePre: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/EF6B35ED-E038-4BFA-A14A-9DE3B1D733B1_1.png?v=1778497776",
+  techHero: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5443.jpg?v=1778587423",
+  benefitsImg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/Gemini_Generated_Image_3rzicp3rzicp3rzi.png?v=1778578838",
+  smartChoice: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/C467FBDD-0016-4870-8602-6269410E7D6B_1.png?v=1778237191",
+  results: [
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/A55A68B2-71B8-4E35-8CA6-109ECA92458F.png?v=1778497778",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5392_1.jpg?v=1778497770",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5396.jpg?v=1778497770",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5400.jpg?v=1778497770",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5399.jpg?v=1778497770",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5397.jpg?v=1778497771",
+  ],
+  ester: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5044_1.jpg?v=1778497770",
+  isabel: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5016_1.png?v=1778237239",
+  ctaBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/EF6B35ED-E038-4BFA-A14A-9DE3B1D733B1.png?v=1778497777",
+  pay: [
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_3.png?v=1778241117",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_4.png?v=1778241117",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5036.png?v=1778237238",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5037.webp?v=1778237237",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/visa.png?v=1778585309",
+  ],
+  guarantee: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/download_10.jpg?v=1778241117",
+};
+
 const ANN_ITEMS = [
   "BIENVENIDA A TU NUEVO RITUAL DE AMOR PROPIO Y CUIDADO",
   "MÁS DE 5.000 CHILENAS YA TRANSFORMARON SU PIEL  |  ENVÍO GRATIS 🇨🇱",
@@ -16,28 +42,27 @@ const ANN_ITEMS = [
 const TESTIMONIALS = [
   { emoji: "👩🏽", name: "María José R.", text: "Lo compré sin muchas esperanzas y a los 10 días mis amigas me preguntaron qué me había hecho. La piel se ve increíblemente más tersa y luminosa." },
   { emoji: "👩🏻‍🦳", name: "Claudia S., 52 años", text: "Jamás pensé que algo tan sencillo funcionara así. Los parches de silicona son magia pura. Mis arrugas del entrecejo desaparecieron casi por completo." },
-  { emoji: "👩🏽‍🦱", name: "Valentina T.", text: "En la segunda semana ya noté que mi piel se veía más firme y luminosa. El ritual de 3 días es increíble. Vale cada peso." },
-  { emoji: "👩🏽‍🦰", name: "Daniela P.", text: "Me encantó el ritual de los 3 días. El retinol de noche + el parche es lo mejor que he probado. Me levanto con la piel planchada y suave. Es adictivo." },
+  { emoji: "👩🏽‍🦱", name: "Valentina T.", text: "En la segunda semana ya noté que mi piel se veía más firme y luminosa. El ritual es increíble. Vale cada peso." },
+  { emoji: "👩🏽‍🦰", name: "Daniela P.", text: "Me encantó el ritual. El sérum + el sellado es lo mejor que he probado. Me levanto con la piel planchada y suave. Es adictivo." },
   { emoji: "👩🏻", name: "Francisca L.", text: "El kit llegó perfecto y los resultados a los 14 días son impresionantes. Muchas gracias Estheré, me devolviste la confianza en mi misma." },
-  { emoji: "👩🏽‍🦳", name: "Isabel M.", text: "El ácido hialurónico es suavísimo y el parche de silicona en la frente… wow. Piel de bebé. No paro de recomendarlo a todas mis amigas." },
-  { emoji: "👩🏻‍🦳", name: "Pamela G., 47 años", text: "Después de 3 semanas con el kit, la gente me pregunta si adelgacé o si me hice algo. La respuesta es: solo el Kit Lifting Botox. ¡Gracias!" },
+  { emoji: "👩🏽‍🦳", name: "Isabel M.", text: "El sérum es suavísimo y el sellado dérmico en la frente… wow. Piel de bebé. No paro de recomendarlo a todas mis amigas." },
+  { emoji: "👩🏻‍🦳", name: "Pamela G., 47 años", text: "Después de 3 semanas con el kit, la gente me pregunta si me hice algo. La respuesta es: solo el Kit Efecto Tensor 360. ¡Gracias!" },
 ];
 
 const FAQS = [
-  { q: "¿Para qué tipo de piel es el Kit Lifting Botox?", a: "El kit está formulado para pieles maduras, secas o con signos de envejecimiento. Es apto para pieles sensibles. Si tienes alguna condición dermatológica específica, consulta con tu médico antes de usar." },
-  { q: "¿Cuándo empezaré a ver resultados?", a: "La mayoría de las usuarias reportan mejoras visibles en textura e hidratación desde los primeros 3 días. Los resultados más notorios en firmeza y reducción de arrugas se observan entre los días 10 y 14 de uso continuo." },
-  { q: "¿Cómo funciona el ciclo de 72 horas?", a: "El ciclo es simple: durante el día aplicas el ácido hialurónico (volumen y relleno), la primera noche usas el retinol (renovación y firmeza), y la segunda noche colocas el parche de silicona (sellado y alisado mecánico). Luego se repite." },
-  { q: "¿El retinol irrita la piel?", a: "Nuestra formulación de retinol está diseñada para minimizar la irritación. Te recomendamos comenzar usándolo 2 veces por semana e ir aumentando la frecuencia gradualmente. Si notas enrojecimiento excesivo, reduce la frecuencia." },
-  { q: "¿Cuánto demora el envío?", a: "El tiempo estimado de entrega es de 10 a 14 días. El envío es completamente gratis a todo Chile." },
-  { q: "¿Cómo funciona la garantía de 30 días?", a: "Si seguiste el protocolo correctamente durante 30 días y no estás satisfecha con los resultados, solo debes contactarnos y devolver los frascos (incluso vacíos) para recibir el reembolso completo del valor del producto." },
-  { q: "¿Puedo usar el kit si estoy embarazada o lactando?", a: "El retinol no está recomendado durante el embarazo o la lactancia. En ese caso, consulta con tu médico antes de usar el kit completo. El ácido hialurónico y el parche de silicona son seguros para uso externo." },
+  { q: "¿Por qué mis cremas actuales no parecen tener efecto?", a: "La mayoría de los productos pierden gran parte de sus activos por evaporación. El Kit Efecto Tensor 360 utiliza la Ingeniería Facial para crear una oclusión inteligente: el Sellado Dérmico impide la evaporación e impulsa la fórmula hacia las capas más profundas." },
+  { q: "¿Cómo nació la Ingeniería Facial?", a: "Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, utilicé mi formación para investigar y probar hasta encontrar el sérum ideal que combina Oro 24k, Peptídeos, Niacinamida, Colágeno y Ácido Hialurónico, potenciándolo con el Sellado Dérmico para crear un sistema realmente efectivo." },
+  { q: "¿Cómo sé que los parches no se caerán y realmente durarán?", a: "Si se aplican sobre la piel limpia, la tecnología de succión natural los mantiene firmes. Para que duren los 30 usos, simplemente lávalos con agua después de cada aplicación y déjalos secar completamente." },
+  { q: "¿Por qué el precio es tan accesible si es tecnología de lujo?", a: "En Estheré, eliminamos intermediarios para llegar directamente a tu hogar. Al ser un sistema reutilizable hasta 30 veces, el costo por aplicación es una fracción de lo que pagarías en una clínica." },
+  { q: "¿Cuánto cuesta el envío y cuánto tarda en llegar a mi casa?", a: "Ofrecemos Envío Totalmente Gratis a todo Chile. Tu pedido llegará en un plazo de 10 a 15 días hábiles." },
+  { q: "¿Cómo es el ritual diario y cuánto tiempo me tomará?", a: "Por la mañana: aplicas solo el sérum. Por la noche: aplicas el sérum, esperas 10 minutos y luego colocas el Sellado Dérmico." },
 ];
 
 const WHY_CARDS = [
-  { n: "01", t: "Tecnología de 3 etapas", d: "☀️ Ácido hialurónico · 🌙 Retinol · 🌙 Parche de silicona. Piel más lisa, firme y rejuvenecida al despertar." },
-  { n: "02", t: "Alisado mecánico activo", d: 'El parche actúa como una "plancha biológica", evitando pliegues del sueño y suavizando las arrugas.' },
-  { n: "03", t: "Sistema facial 72h", d: "Día (volumen), noche 1 (renovación) y noche 2 (sellado). Piel en recuperación constante." },
-  { n: "04", t: "Sin agujas, sin dolor", d: "Efecto clínica estética en casa, en solo 2 minutos al día." },
+  { n: "01", t: "Tecnología de 3 Etapas", d: "Oro 24k + Colágeno + Sellado. Piel firme, iluminada e hidratada al despertar." },
+  { n: "02", t: "Oclusión Mecánica Activa", d: "El parche evita pliegues del sueño y potencia los activos. Reutilizable hasta 30 veces." },
+  { n: "03", t: "Sistema Facial 360", d: "Día (Volumen), Noche (Reparación) y Sellado (Firmeza). Ingeniería facial en recuperación constante." },
+  { n: "04", t: "Resultados Premium, Precio Justo", d: "Calidad de clínica en casa por una fracción del costo. Solo 2 minutos al día para un cambio real." },
 ];
 
 function Index() {
@@ -77,9 +102,9 @@ function Index() {
             </div>
           </div>
           <div className="lp-hero-content">
-            <div className="lp-hero-eyebrow">Estheré · Tecnología de Triple Acción</div>
-            <h1>Kit Efecto Tensor 360: O segredo para uma aparência que ignora o tempo e revela uma pele visivelmente mais Lisa, Firme e Radiante com apenas 2 minutos por dia</h1>
-            <a href="#precio" className="btn btn-gold btn-pulse">QUIERO MI EFECTO TENSOR 360</a>
+            <div className="lp-hero-eyebrow">Estheré · Ingeniería Facial</div>
+            <h1>Kit Efecto Tensor 360: El secreto para una apariencia que desafía el paso del tiempo. Piel visiblemente más lisa y firme con solo 2 minutos de uso diario.</h1>
+            <a href="#precio" className="btn btn-gold btn-pulse">QUIERO MI EFECTO TENSOR</a>
             <p className="lp-hero-guarantee">Garantía de satisfacción o te devolvemos tu dinero.</p>
           </div>
         </section>
@@ -99,14 +124,14 @@ function Index() {
           <div className="lp-scroll-track">
             {Array.from({ length: 16 }).map((_, i) => (
               <div key={i} className="lp-scroll-item">
-                <img src={`https://images.unsplash.com/photo-15${60 + (i % 9)}000000000-${i}?w=300&h=300&fit=crop&auto=format&q=70`} alt="" onError={(e) => ((e.target as HTMLImageElement).src = `https://picsum.photos/seed/esthere${i}/300/300`)} />
+                <img src={`https://picsum.photos/seed/esthere${i}/300/300`} alt="" />
               </div>
             ))}
           </div>
         </div>
-        <p className="lp-scroll-caption">Transformação visível após 30 a 60 dias de uso constante. A evolução da textura varia conforme o ritmo único de cada pele.</p>
+        <p className="lp-scroll-caption">Cambios visibles en 30-60 días de uso. La evolución varía según cada piel.</p>
 
-        {/* BENEFITS SUBTITLE + CIRCLES */}
+        {/* BENEFITS SUBTITLE + CHECKS */}
         <section className="lp-benefits-sub">
           <h2>Ingeniería Facial: Oro 24K, Ácido Hialurónico, Niacinamida y Colágeno unidos al Sellado Dérmico. Resultados profesionales y piel visiblemente más lisa en 2 minutos, por una fracción del costo.</h2>
         </section>
@@ -128,16 +153,21 @@ function Index() {
 
         {/* PRICE CTA */}
         <section id="precio" className="lp-price-cta">
+          <div className="lp-price-img">
+            <img src={IMG.pricePre} alt="Kit Efecto Tensor 360" />
+          </div>
           <div className="lp-price-old">Antes: $ 44.990</div>
-          <div className="lp-price-new">$ 34.990</div>
+          <div className="lp-price-new">$ 29.990</div>
           <div>
-            <a href="#" className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor 360</a>
+            <a href="#" className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
           </div>
           <div className="lp-pay-icons">
-            <span>🚚 Envío gratis</span>
-            <span>💳 VISA · MC</span>
-            <span>🇨🇱 WebPay · Servipag</span>
-            <span>🛡️ Garantía 30 días</span>
+            {IMG.pay.map((p, i) => (
+              <img key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
+            ))}
+          </div>
+          <div className="lp-pay-icons" style={{ marginTop: 10 }}>
+            <img src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge" />
           </div>
         </section>
 
@@ -146,7 +176,7 @@ function Index() {
           <div className="text-center" style={{ marginBottom: 28 }}>
             <div className="subtitle">Lo que dicen ellas</div>
             <div className="gold-divider" />
-            <h2>Experiencias reales con el Kit Lifting Botox</h2>
+            <h2>Experiencias reales con el Kit Efecto Tensor 360</h2>
           </div>
           <div className="lp-testi-scroll">
             {TESTIMONIALS.map((t, i) => (
@@ -163,61 +193,53 @@ function Index() {
             ))}
           </div>
           <div className="text-center" style={{ marginTop: 32 }}>
-            <a href="#precio" className="btn btn-dark">REJUVENECER MI PIEL AHORA</a>
+            <a href="#precio" className="btn btn-dark">QUIERO MI EFECTO TENSOR</a>
           </div>
         </section>
 
-        {/* TRIPLE ACCION */}
+        {/* TRIPLE ACCION → INGENIERÍA FACIAL */}
         <section className="sec inner">
           <div className="text-center">
             <div className="subtitle">Sistema inteligente</div>
             <div className="gold-divider" />
-            <h2>Kit Lifting Botox con Tecnología de Triple Acción: un sistema inteligente que potencia la absorción de los activos para mejores resultados</h2>
+            <h2>Kit Efecto Tensor 360 con Ingeniería Facial de Triple Acción: un sistema inteligente que potencia la absorción de activos para resultados visibles.</h2>
+            <div className="lp-inline-img">
+              <img src={IMG.techHero} alt="Ingeniería Facial" />
+            </div>
           </div>
           <ul className="lp-action-list">
-            <li><span className="em">☀️</span><div><strong>DÍA — Volumen.</strong> El ácido hialurónico devuelve el relleno natural y prepara la piel para recibir los activos nocturnos.</div></li>
-            <li><span className="em">🌙</span><div><strong>NOCHE 1 — Lifting.</strong> El retinol puro renueva la firmeza e inicia la reparación profunda de la piel.</div></li>
-            <li><span className="em">🌙</span><div><strong>NOCHE 2 — Sellado.</strong> El parche de silicona actúa como un "botox tópico", sellando los activos y alisando cada arruga de forma mecánica.</div></li>
+            <li><span className="em">☀️</span><div><strong>DÍA — Volumen y Brillo.</strong> Oro 24k + Colágeno: Hidratación profunda y luminosidad inmediata.</div></li>
+            <li><span className="em">🌙</span><div><strong>NOCHE — Reparación.</strong> Péptidos + Niacinamida: Firmeza y tono uniforme mientras descansas.</div></li>
+            <li><span className="em">🛡️</span><div><strong>SELLADO — Efecto Tensor.</strong> Parche de Silicona: Sellado mecánico que maximiza la absorción y alisa la textura.</div></li>
           </ul>
           <div className="text-center">
-            <a href="#precio" className="btn btn-gold">Iniciar mi ciclo de 72 horas</a>
+            <a href="#precio" className="btn btn-gold">Iniciar mi ritual</a>
           </div>
         </section>
 
         {/* CICLO */}
         <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
-          <div className="subtitle">El ciclo completo</div>
+          <div className="subtitle">El ciclo de Ingeniería Facial 360</div>
           <div className="gold-divider" />
-          <h2>Rejuvenece tu piel durante el día y alísala mientras duermes</h2>
+          <h2>Ilumina tu piel durante el día y potencia la firmeza mientras descansas.</h2>
           <div className="lp-ciclo-grid">
             <img src="https://picsum.photos/seed/ciclo1/600/700" alt="Día" />
             <img src="https://picsum.photos/seed/ciclo2/600/700" alt="Noche" />
           </div>
-          <div className="lp-ben-row" style={{ marginTop: 40 }}>
-            <div className="lp-ben-item"><div className="lp-ben-icon">💧</div><div className="lp-ben-text"><strong>Hidratación profunda</strong><span>El ácido hialurónico rellena y devuelve volumen visible desde el primer uso.</span></div></div>
-            <div className="lp-ben-item"><div className="lp-ben-icon">✨</div><div className="lp-ben-text"><strong>Firmeza renovada</strong><span>El retinol estimula el colágeno y mejora la textura durante la noche.</span></div></div>
-            <div className="lp-ben-item"><div className="lp-ben-icon">🛡️</div><div className="lp-ben-text"><strong>Alisado mecánico</strong><span>El parche de silicona sella, alisa y evita pliegues mientras duermes.</span></div></div>
+          <div className="lp-inline-img" style={{ marginTop: 30 }}>
+            <img src={IMG.benefitsImg} alt="Beneficios" />
           </div>
-        </section>
-
-        {/* GALLERY ELLAS LO MUESTRAN */}
-        <section className="sec inner text-center">
-          <div className="subtitle">Ellas lo muestran</div>
-          <div className="gold-divider" />
-          <h2>El secreto de 2 minutos: cómo miles de mujeres logran una piel lisa sin ir a una clínica</h2>
-          <div className="lp-gallery15">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="lp-g-item">
-                <img src={`https://picsum.photos/seed/g${i}/400/520`} alt="" />
-              </div>
-            ))}
+          <div className="lp-ben-row" style={{ marginTop: 40 }}>
+            <div className="lp-ben-item"><div className="lp-ben-icon">💧</div><div className="lp-ben-text"><strong>Volumen y Luminosidad</strong><span>El Oro 24k y el Ácido Hialurónico proporcionan un relleno visual inmediato y una hidratación profunda que ilumina el rostro.</span></div></div>
+            <div className="lp-ben-item"><div className="lp-ben-icon">✨</div><div className="lp-ben-text"><strong>Firmeza y Reparación</strong><span>Los Péptidos y el Colágeno actúan en la estructura de la piel para mejorar la firmeza y promover una textura renovada.</span></div></div>
+            <div className="lp-ben-item"><div className="lp-ben-icon">🛡️</div><div className="lp-ben-text"><strong>Oclusión Inteligente</strong><span>El Sellado Dérmico con parche de silicona maximiza la absorción de activos y mantiene la piel descansada, siendo reutilizable hasta 30 veces.</span></div></div>
           </div>
         </section>
 
         {/* GUARANTEE */}
         <section className="sec inner">
           <div className="lp-guarantee">
-            <div className="lp-guar-icon"><img src="https://picsum.photos/seed/seal/140/140" alt="garantía" /></div>
+            <div className="lp-guar-icon"><img src={IMG.guarantee} alt="garantía" /></div>
             <div>
               <h4>GARANTÍA DE 30 DÍAS</h4>
               <p>Si no notas resultados visibles en tu piel, te devolvemos tu dinero. Sin preguntas, sin trámites complicados.</p>
@@ -225,7 +247,24 @@ function Index() {
           </div>
         </section>
 
-        {/* REELS */}
+        {/* ELLAS NOS MUESTRAN (substitui o bloco antigo) */}
+        <section className="sec inner text-center">
+          <div className="subtitle">Ellas nos muestran</div>
+          <div className="gold-divider" />
+          <h2>Miles de mujeres en Chile prefieren la sinergia del Oro 24k y la tecnología de sellado para una piel visiblemente más firme y radiante.</h2>
+          <div className="lp-gallery15">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="lp-g-item">
+                <img src={`https://picsum.photos/seed/ellas${i}/400/520`} alt="" />
+              </div>
+            ))}
+          </div>
+          <div style={{ marginTop: 28 }}>
+            <a href="#precio" className="btn btn-dark">RECUPERAR MI FIRMEZA AHORA</a>
+          </div>
+        </section>
+
+        {/* REELS (sem botão) */}
         <section className="sec inner">
           <div className="lp-reel-carousel">
             {[1,2,3,4,5,6].map((n) => (
@@ -235,17 +274,15 @@ function Index() {
               </div>
             ))}
           </div>
-          <div className="text-center" style={{ marginTop: 24 }}>
-            <a href="#precio" className="btn btn-gold">Recuperar mi juventud</a>
-          </div>
         </section>
 
         {/* WHY SMART CHOICE */}
         <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
           <div className="subtitle">La elección inteligente</div>
           <div className="gold-divider" />
-          <h2>¿Por qué el Kit Lifting Botox es la elección inteligente para tu piel?</h2>
-          <p style={{ maxWidth: 640, margin: "12px auto 0", color: "var(--text-mid)" }}>Donde la cosmética avanzada se une con la ingeniería facial para resultados reales.</p>
+          <div className="lp-inline-img">
+            <img src={IMG.smartChoice} alt="La elección inteligente" />
+          </div>
           <div className="lp-why-grid">
             {WHY_CARDS.map((c) => (
               <div key={c.n} className="lp-why-card">
@@ -264,11 +301,11 @@ function Index() {
         <section className="sec inner text-center">
           <div className="subtitle">Resultados reales</div>
           <div className="gold-divider" />
-          <h2>Ellas ya recibieron su Kit Lifting Botox y están logrando resultados de clínica, en solo 2 minutos al día</h2>
+          <h2>Ellas ya recibieron su Kit de Ingeniería Facial y están listas para transformar su piel en solo 2 minutos al día.</h2>
           <div className="lp-gallery15">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {IMG.results.map((src, i) => (
               <div key={i} className="lp-g-item">
-                <img src={`https://picsum.photos/seed/res${i}/400/520`} alt="" />
+                <img src={src} alt={`resultado ${i+1}`} />
               </div>
             ))}
           </div>
@@ -279,42 +316,45 @@ function Index() {
 
         {/* CICLO QUOTE */}
         <section className="sec inner text-center" style={{ background: "var(--c2)" }}>
-          <div className="subtitle">El ciclo que transforma</div>
+          <div className="subtitle">El Ciclo de Ingeniería Facial</div>
           <div className="gold-divider" />
           <h2 style={{ fontStyle: "italic", maxWidth: 720, margin: "0 auto" }}>
-            "Rellena de día, renueva de noche y alisa mientras duermes:<br />el ciclo completo para una piel más joven."
+            "Volumen de día, renovación de noche y oclusión inteligente mientras descansas: el sistema completo para una piel firme y radiante."
           </h2>
         </section>
 
-        {/* CIENCIA */}
+        {/* TU MOMENTO (substitui ciencia) */}
         <section className="lp-ciencia">
-          <div className="subtitle">La ciencia de una clínica, la libertad de tu hogar</div>
+          <div className="subtitle">Tu Momento, Tu Transformación</div>
           <div className="gold-divider" />
-          <h2>¿Por qué elegir entre el dolor y los resultados?</h2>
-          <p>Las agujas son temporales, costosas y, seamos honestas, invasivas. No deberías tener que programar tu vida en torno a una cita médica para sentirte bella.</p>
-          <p>El kit lifting botox es tu ritual de 2 minutos. Es el placer de ver cómo tu piel recupera su firmeza mientras te preparas para el día. Sin hinchazón, sin hematomas — solo tú, más joven, en tu propio espejo.</p>
+          <div className="lp-inline-img">
+            <img src={IMG.smartChoice} alt="Tu momento" />
+          </div>
+          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El Kit de Ingeniería Facial Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
+          <p>Con el poder del Oro 24k y el sellado dérmico reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
+          <p>Regálate la piel que mereces, hoy mismo.</p>
         </section>
 
-        {/* FOUNDER */}
+        {/* HISTORIA DE ESTER */}
         <section className="lp-founder">
           <div className="lp-two-col inner">
             <div className="lp-img-block">
-              <img src="https://picsum.photos/seed/founder/700/800" alt="Ester, fundadora" />
+              <img src={IMG.ester} alt="Ester, fundadora" />
             </div>
             <div>
-              <div className="subtitle">La historia detrás</div>
+              <div className="subtitle">Historia de Ester</div>
               <div className="gold-divider" style={{ margin: "16px 0" }} />
-              <h2 style={{ fontStyle: "italic" }}>"Rellena de día, renueva de noche y alisa mientras duermes"</h2>
-              <p style={{ marginTop: 18 }}>Soy Ester. Detrás de Estheré hay una historia real: después de no encontrar resultados con nada más, usé mi formación como dermatóloga y estudié, probé y combiné diferentes productos hasta encontrar los 3 ideales que, por sus efectos de clínica, llamo tecnología de triple acción.</p>
-              <p style={{ marginTop: 12 }}>Así nació el Kit Lifting Botox — estos productos que me devolvieron la autoestima y me hicieron sentir por fuera como ya me sentía por dentro. Hoy lo comparto con mujeres chilenas, porque ellas merecen sentirse más bellas y jóvenes.</p>
+              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une Oro 24k, Peptídeos, Niacinamida, Colágeno y Ácido Hialurónico.</p>
+              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el Sellado Dérmico. Así nació la Ingeniería Facial, la unión perfecta de estos dos productos en el Kit Efecto Tensor 360.</p>
+              <p style={{ marginTop: 12 }}>Un sistema de nivel clínico, a una fracción del costo, que hoy más de 5.000 chilenas ya utilizan para transformar su piel en solo 2 minutos."</p>
             </div>
           </div>
 
           <div className="lp-guarantee" style={{ marginTop: 40, maxWidth: 880, marginLeft: "auto", marginRight: "auto" }}>
-            <div className="lp-guar-icon"><img src="https://picsum.photos/seed/seal2/140/140" alt="garantía" /></div>
+            <div className="lp-guar-icon"><img src={IMG.guarantee} alt="garantía" /></div>
             <div>
               <h4>Compromiso Estheré: Satisfacción garantizada en 30 días</h4>
-              <p>Estamos tan seguras de nuestra Tecnología de Triple Acción que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
+              <p>Estamos tan seguras de nuestra Ingeniería Facial que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
               <div style={{ marginTop: 16 }}>
                 <a href="#precio" className="btn btn-gold">Quiero con garantía</a>
               </div>
@@ -322,18 +362,17 @@ function Index() {
           </div>
         </section>
 
-        {/* PROXIMO PASO */}
-        <section className="lp-final-reel">
-          <div className="lp-final-reel-bg">
-            <img src="https://picsum.photos/seed/proximo/1400/700" alt="" />
+        {/* TESTEMUNHO ISABEL */}
+        <section className="sec inner text-center">
+          <div className="subtitle">Tu próximo paso</div>
+          <div className="gold-divider" />
+          <h2 style={{ marginBottom: 24 }}>"El testimonio de Isabel se repite en más de 5.000 chilenas… el tuyo puede ser el próximo."</h2>
+          <div className="lp-isabel-img">
+            <img src={IMG.isabel} alt="Isabel" />
           </div>
-          <div className="lp-final-reel-content">
-            <div className="subtitle" style={{ color: "var(--gold)" }}>Tu próximo paso</div>
-            <div className="gold-divider" />
-            <h2>"El testimonio de Isabel se repite en más de 5.000 chilenas… el tuyo puede ser el próximo."</h2>
-            <div style={{ marginTop: 24 }}>
-              <a href="#precio" className="btn btn-gold btn-pulse">Quiero ese resultado</a>
-            </div>
+          <div className="lp-isabel-text">
+            <p>"Después de años probando de todo sin éxito, la Ingeniería Facial cambió mi perspectiva. La unión del Oro 24k con el Sellado Dérmico es el equilibrio que mi piel necesitaba para recuperar su firmeza y luminosidad.</p>
+            <p style={{ marginTop: 12 }}>Siento la calidad de una clínica en un ritual de 2 minutos que realmente puedo mantener."</p>
           </div>
         </section>
 
@@ -341,7 +380,7 @@ function Index() {
         <section className="sec inner text-center">
           <div className="subtitle">Resolvemos tus dudas</div>
           <div className="gold-divider" />
-          <h2>Preguntas frecuentes</h2>
+          <h2>Preguntas Frecuentes: Ingeniería Facial Estheré</h2>
           <div className="lp-faq-list">
             {FAQS.map((f, i) => (
               <div key={i} className={`lp-faq-item ${openFaq === i ? "open" : ""}`}>
@@ -355,14 +394,18 @@ function Index() {
           </div>
         </section>
 
-        {/* CIERRE FINAL */}
-        <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
-          <div className="subtitle">El inicio de tu transformación</div>
-          <div className="gold-divider" />
-          <h2>Kit Lifting Botox: resultados de clínica en casa, rejuvenece con la tecnología que solo la triple acción ofrece.</h2>
-          <p style={{ marginTop: 12, color: "var(--text-mid)" }}>2 minutos al día · ciclo continuo de 3 días</p>
-          <div style={{ marginTop: 24 }}>
-            <a href="#precio" className="btn btn-gold btn-pulse">Quiero mi Lifting Botox</a>
+        {/* CTA FINAL */}
+        <section className="lp-final-reel">
+          <div className="lp-final-reel-bg">
+            <img src={IMG.ctaBg} alt="" />
+          </div>
+          <div className="lp-final-reel-content">
+            <div className="subtitle" style={{ color: "var(--gold)" }}>El inicio de tu transformación</div>
+            <div className="gold-divider" />
+            <h2>Kit Ingeniería Facial: Resultados de clínica en casa con la sinergia del Oro 24k y el sellado dérmico profundo.</h2>
+            <div style={{ marginTop: 24 }}>
+              <a href="#precio" className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
+            </div>
           </div>
         </section>
 
@@ -370,11 +413,12 @@ function Index() {
         <div className="lp-pay-bar">
           <p>🔒 Compra 100% segura · Envío gratis a todo Chile</p>
           <div className="lp-pay-methods">
-            <span className="lp-pay-badge">VISA</span>
-            <span className="lp-pay-badge">MASTERCARD</span>
-            <span className="lp-pay-badge">WEBPAY</span>
-            <span className="lp-pay-badge">SERVIPAG</span>
-            <span className="lp-pay-badge">🛡️ GARANTÍA 30 DÍAS</span>
+            {IMG.pay.map((p, i) => (
+              <img key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
+            ))}
+          </div>
+          <div style={{ marginTop: 14 }}>
+            <img src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge" />
           </div>
         </div>
 
@@ -382,20 +426,17 @@ function Index() {
         <footer className="lp-footer">
           <div className="lp-footer-brand">ESTHERÉ</div>
           <div className="lp-footer-links">
-            <a href="#">Política de privacidad</a>
-            <a href="#">Términos y condiciones</a>
-            <a href="#">Política de devoluciones</a>
-            <a href="#">Preguntas frecuentes</a>
-            <a href="#">Contacto</a>
+            <a href="/policies/privacy-policy">Política de Privacidad</a>
+            <a href="/policies/terms-of-service">Términos y Condiciones</a>
+            <a href="/policies/refund-policy">Política de Devoluciones</a>
+            <a href="/pages/contacto">Contacto</a>
           </div>
           <div className="lp-footer-disc">
             © {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile
             <br /><br />
-            Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar. Las imágenes y testimonios son de usuarias reales y no garantizan resultados idénticos para todos los casos.
+            Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar.
             <br /><br />
-            Este sitio web no es parte de Facebook™, Instagram™ ni Meta Platforms Inc. FACEBOOK™ es una marca registrada de META PLATFORMS, INC.
-            <br /><br />
-            Al realizar una compra, aceptas nuestros Términos y Condiciones y Política de Privacidad. Para devoluciones, escríbenos dentro de los 30 días posteriores a la recepción del producto.
+            Este sitio web no es parte de Facebook™, Instagram™ ni Meta Platforms Inc.
           </div>
         </footer>
       </div>
@@ -403,8 +444,7 @@ function Index() {
       {/* STICKY */}
       <div className={`lp-sticky ${showSticky ? "visible" : ""}`}>
         <div>
-          <div className="lp-sticky-price"><span>$ 49.990</span>$ 34.990</div>
-          <div className="lp-sticky-note">🎉 Ahorras $15.000 — 30% OFF</div>
+          <div className="lp-sticky-price"><span>$ 44.990</span>$ 29.990</div>
         </div>
         <a href="#precio" className="btn btn-gold" style={{ padding: "12px 22px", fontSize: 13 }}>Quiero el mío</a>
       </div>
@@ -456,7 +496,7 @@ const LP_CSS = `
 .lp-checks { background:#fff; padding:24px 5% 56px; }
 .lp-checks-grid { max-width:720px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
 .lp-check-item { display:flex; align-items:center; gap:10px; font-family:'Montserrat',sans-serif; font-size:13px; color:var(--text-dark); }
-.lp-check-icon { width:22px; height:22px; border-radius:50%; background:#1e88e5; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
+.lp-check-icon { width:22px; height:22px; border-radius:50%; background:#ccb597; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; }
 
 .lp-scroll-wrap { background:var(--c2); padding:28px 0; overflow:hidden; position:relative; }
 .lp-scroll-wrap::before,.lp-scroll-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; }
@@ -469,20 +509,18 @@ const LP_CSS = `
 
 .lp-benefits-sub { padding:56px 5% 20px; background:#fff; text-align:center; }
 .lp-benefits-sub h2 { max-width:720px; margin:0 auto; font-size:clamp(18px,2.8vw,24px); }
-.lp-circles { background:#fff; padding:32px 5% 56px; }
-.lp-circles-row { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
-.lp-circle-item { display:flex; flex-direction:column; align-items:center; gap:14px; }
-.lp-circle-photo { width:160px; height:160px; border-radius:50%; overflow:hidden; border:3px solid rgba(204,181,151,.4); box-shadow:0 8px 28px rgba(138,70,3,.15); transition:transform .3s ease; }
-.lp-circle-photo:hover { transform:scale(1.05); }
-.lp-circle-photo img { width:100%; height:100%; object-fit:cover; display:block; }
-.lp-circle-label { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--text-dark); }
+
+.lp-inline-img { max-width:680px; margin:24px auto; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); }
+.lp-inline-img img { width:100%; height:auto; display:block; }
 
 .lp-price-cta { background:#fff; padding:52px 5%; text-align:center; position:relative; }
+.lp-price-img { max-width:340px; margin:0 auto 24px; }
+.lp-price-img img { width:100%; height:auto; display:block; border-radius:14px; }
 .lp-price-old { font-size:15px; color:var(--text-light); text-decoration:line-through; }
-.lp-price-new { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,6vw,54px); font-weight:600; color:var(--text-dark); line-height:1.1; margin:4px 0 6px; }
-.lp-price-badge { display:inline-block; background:linear-gradient(135deg,#ccb597,#8a4603); color:#fff; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:600; letter-spacing:.06em; padding:5px 16px; border-radius:30px; margin-bottom:24px; }
-.lp-pay-icons { margin-top:16px; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
-.lp-pay-icons span { font-family:'Montserrat',sans-serif; font-size:11px; color:var(--text-light); }
+.lp-price-new { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,6vw,54px); font-weight:600; color:var(--text-dark); line-height:1.1; margin:4px 0 22px; }
+.lp-pay-icons { margin-top:16px; display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
+.lp-pay-icon-img { height:28px; width:auto; object-fit:contain; }
+.lp-guarantee-badge { height:64px; width:auto; object-fit:contain; }
 
 .lp-testi-sec { background:var(--c2); padding:72px 5%; }
 .lp-testi-scroll { display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:16px; scrollbar-width:none; }
@@ -509,6 +547,10 @@ const LP_CSS = `
 .lp-ciencia h2 { margin:8px 0 16px; }
 .lp-ciencia p { max-width:680px; margin:0 auto 14px; font-size:16px; line-height:1.75; color:var(--text-mid); }
 
+.lp-isabel-img { max-width:420px; margin:24px auto; border-radius:18px; overflow:hidden; box-shadow:var(--shadow); }
+.lp-isabel-img img { width:100%; height:auto; display:block; }
+.lp-isabel-text { max-width:680px; margin:24px auto 0; font-size:16px; color:var(--text-mid); line-height:1.75; font-style:italic; }
+
 .lp-reel-carousel { display:flex; gap:14px; overflow-x:auto; padding:16px 0; scrollbar-width:none; scroll-snap-type:x mandatory; }
 .lp-reel-carousel::-webkit-scrollbar { display:none; }
 .lp-reel-item { position:relative; min-width:160px; height:284px; border-radius:16px; overflow:hidden; scroll-snap-align:start; flex-shrink:0; box-shadow:0 6px 22px rgba(0,0,0,.1); border:1px solid rgba(204,181,151,.2); }
@@ -528,8 +570,6 @@ const LP_CSS = `
 .lp-final-reel-content { position:relative; z-index:2; text-align:center; padding:48px 5% 56px; max-width:680px; }
 .lp-final-reel-content h2 { color:#F7EFE2; margin:8px 0; line-height:1.35; }
 
-.lp-sticky-note { font-size:11px; font-family:'Montserrat',sans-serif; color:var(--text-light); margin-top:2px; }
-
 .lp-ben-row { display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin:28px 0; }
 .lp-ben-item { display:flex; align-items:flex-start; gap:12px; max-width:280px; text-align:left; }
 .lp-ben-icon { width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,rgba(204,181,151,.2),rgba(204,181,151,.4)); border:1.5px solid rgba(204,181,151,.4); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
@@ -546,7 +586,7 @@ const LP_CSS = `
 .lp-gallery15 .lp-g-item img { width:100%; height:100%; object-fit:cover; display:block; }
 
 .lp-guarantee { background:#fff; border-radius:24px; padding:32px; display:flex; gap:22px; align-items:flex-start; margin:0 auto; max-width:760px; border:1px solid rgba(204,181,151,.2); box-shadow:var(--shadow); }
-.lp-guar-icon img { width:70px; border-radius:12px; }
+.lp-guar-icon img { width:90px; height:auto; border-radius:12px; }
 .lp-guarantee h4 { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:600; color:var(--text-dark); margin-bottom:8px; }
 .lp-guarantee p { font-size:14px; color:var(--text-mid); line-height:1.65; }
 
@@ -557,12 +597,11 @@ const LP_CSS = `
 .lp-faq-icon { width:26px; height:26px; border-radius:50%; background:var(--c3); display:flex; align-items:center; justify-content:center; font-size:16px; color:var(--brown); flex-shrink:0; transition:transform .3s ease; border:1px solid rgba(204,181,151,.35); }
 .lp-faq-item.open .lp-faq-icon { transform:rotate(45deg); }
 .lp-faq-ans { max-height:0; overflow:hidden; transition:max-height .4s ease, padding .3s ease; font-size:15px; color:var(--text-mid); line-height:1.7; }
-.lp-faq-item.open .lp-faq-ans { max-height:300px; padding-bottom:18px; }
+.lp-faq-item.open .lp-faq-ans { max-height:400px; padding-bottom:18px; }
 
 .lp-pay-bar { background:#fff; padding:24px 5%; text-align:center; border-top:1px solid rgba(204,181,151,.2); }
 .lp-pay-bar p { font-family:'Montserrat',sans-serif; font-size:11px; color:var(--text-light); letter-spacing:.06em; text-transform:uppercase; margin-bottom:12px; }
-.lp-pay-methods { display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; }
-.lp-pay-badge { padding:5px 14px; border:1.5px solid rgba(0,0,0,.12); border-radius:8px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:var(--text-mid); background:#fff; }
+.lp-pay-methods { display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
 
 .lp-footer { background:#1C1816; color:rgba(255,255,255,.55); padding:48px 5% 32px; }
 .lp-footer-brand { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--gold); margin-bottom:20px; letter-spacing:.06em; }
@@ -578,7 +617,6 @@ const LP_CSS = `
 
 @media(max-width:600px){
   .lp-wrap .sec { padding:48px 4%; }
-  .lp-circle-photo { width:130px; height:130px; }
   .lp-guarantee { flex-direction:column; }
   .lp-ben-row { flex-direction:column; align-items:center; }
   .lp-testi-card { min-width:275px; }
