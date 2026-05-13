@@ -121,8 +121,8 @@ const FAQS = [
 /* ============================================================
    GOLD — destaque premium para termos-chave (luxury skincare)
    ============================================================ */
-function Gold({ children }: { children: ReactNode }) {
-  return <span className="lp-gold">{children}</span>;
+function Gold({ children, solid = false }: { children: ReactNode; solid?: boolean }) {
+  return <span className={solid ? "lp-gold lp-gold-solid" : "lp-gold"}>{children}</span>;
 }
 
 const WHY_CARDS = [
@@ -191,13 +191,6 @@ function AutoScroller({
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [showSticky, setShowSticky] = useState(false);
-
-  useEffect(() => {
-    // ✅ Sticky bar aparece apenas 8 segundos após carregar a página
-    const t = setTimeout(() => setShowSticky(true), 8000);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <>
@@ -268,7 +261,7 @@ function Index() {
         <section className="lp-checks">
           <div className="lp-checks-grid">
             {[
-              "Efecto de Firmeza Inmediata",
+              "Efecto de Firmeza",
               "Alisado Visible de Textura",
               "Relleno Hidratante Profundo",
               "Acabado Profesional en Casa",
@@ -308,7 +301,7 @@ function Index() {
           <div className="text-center" style={{ marginBottom: 28 }}>
             <div className="subtitle">Lo que dicen ellas</div>
             <div className="gold-divider" />
-            <h2>Experiencias reales con el <Gold>Kit Efecto Tensor 360</Gold></h2>
+            <h2>Experiencias reales con el <Gold solid>Kit Efecto Tensor 360</Gold></h2>
           </div>
           <div className="lp-testi-scroll">
             {TESTIMONIALS.map((t, i) => (
@@ -365,9 +358,9 @@ function Index() {
 
         {/* CICLO */}
         <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
-          <div className="subtitle">El ciclo de <Gold>Ingeniería Facial</Gold> 360</div>
+          <div className="subtitle">El ciclo de <Gold solid>Ingeniería Facial</Gold> 360</div>
           <div className="gold-divider" />
-          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el <Gold>Sellado Dérmico</Gold> ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
+          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el <Gold solid>Sellado Dérmico</Gold> ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
           <div className="lp-inline-img" style={{ marginTop: 30 }}>
             <img src={IMG.benefitsImg} alt="Beneficios" />
           </div>
@@ -455,8 +448,8 @@ function Index() {
           <div className="lp-inline-img">
             <img src={IMG.tuMomento} alt="Tu momento" />
           </div>
-          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El <Gold>Kit Efecto Tensor 360</Gold> con <Gold>Ingeniería Facial</Gold> de Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
-          <p>Con el poder del <Gold>Oro 24k</Gold> y el <Gold>sellado dérmico</Gold> reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
+          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El <Gold solid>Kit Efecto Tensor 360</Gold> con <Gold solid>Ingeniería Facial</Gold> de Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
+          <p>Con el poder del <Gold solid>Oro 24k</Gold> y el <Gold solid>sellado dérmico</Gold> reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
           <p>Regálate la piel que mereces, hoy mismo.</p>
         </section>
 
@@ -469,8 +462,8 @@ function Index() {
             <div>
               <div className="subtitle">Historia de Ester</div>
               <div className="gold-divider" style={{ margin: "16px 0" }} />
-              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une <Gold>Oro 24k</Gold>, <Gold>Péptidos</Gold>, <Gold>Niacinamida</Gold>, <Gold>Colágeno</Gold> y <Gold>Ácido Hialurónico</Gold>.</p>
-              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el <Gold>Sellado Dérmico</Gold>. Así nació la <Gold>Ingeniería Facial</Gold>, la unión perfecta de estos dos productos en el <Gold>Kit Efecto Tensor 360</Gold>.</p>
+              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une <Gold solid>Oro 24k</Gold>, <Gold>Péptidos</Gold>, <Gold>Niacinamida</Gold>, <Gold>Colágeno</Gold> y <Gold>Ácido Hialurónico</Gold>.</p>
+              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el <Gold solid>Sellado Dérmico</Gold>. Así nació la <Gold solid>Ingeniería Facial</Gold>, la unión perfecta de estos dos productos en el <Gold solid>Kit Efecto Tensor 360</Gold>.</p>
               <p style={{ marginTop: 12 }}>Un sistema de nivel clínico, a una fracción del costo, que hoy más de 5.000 chilenas ya utilizan para transformar su piel en solo 2 minutos."</p>
             </div>
           </div>
@@ -562,26 +555,11 @@ function Index() {
           </div>
           <div className="lp-footer-disc">
             <p>© {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile</p>
-            <p>Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar.</p>
-            <p>Este sitio no forma parte del sitio web de Facebook™ o Meta™ ni está afiliado a Meta Platforms, Inc. Además, este sitio NO está respaldado por Facebook™ de ninguna manera. Facebook™ es una marca registrada de Meta Platforms, Inc.</p>
+            <p>Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar. Este sitio no forma parte del sitio web de Facebook™ o Meta™ ni está afiliado de ninguna manera a Meta Platforms, Inc. Además, este sitio NO está respaldado, administrado ni patrocinado por Facebook™ o Instagram™.</p>
           </div>
         </footer>
       </div>
 
-      {/* STICKY */}
-      <div className={`lp-sticky ${showSticky ? "visible" : ""}`}>
-        <div className="lp-sticky-info">
-          <div className="lp-sticky-old">$ 44.990</div>
-          <div className="lp-sticky-save">Ahorra $15.000 • 30% OFF</div>
-          <div className="lp-sticky-now">$ 29.990</div>
-        </div>
-        {/* ============================================================
-            ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (STICKY BAR)
-            Ex.: https://sualoja.myshopify.com/cart/VARIANT_ID:1
-            CTA EM ESPANHOL — manter no estilo dos demais botões da página
-            ============================================================ */}
-        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse lp-sticky-btn">Quiero el mío</a>
-      </div>
     </>
   );
 }
@@ -609,6 +587,7 @@ const LP_CSS = `
 @keyframes pulse-glow { 0%,100%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 0 rgba(204,181,151,.4); } 50%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 10px rgba(204,181,151,0); } }
 .lp-wrap .btn-pulse { animation:pulse-glow 2.5s ease infinite; }
 .lp-wrap .lp-gold { font-weight:700; background:linear-gradient(135deg,#e7d4b3 0%,#ccb597 50%,#8a4603 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; letter-spacing:.01em; }
+.lp-wrap .lp-gold-solid { background:none; -webkit-text-fill-color:#ccb597; color:#ccb597; }
 
 .lp-hero { position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#1a1510; }
 .lp-hero-video-wrap { position:absolute; inset:0; background:linear-gradient(135deg,#2a1f14,#0f0c09); display:flex; align-items:center; justify-content:center; }
