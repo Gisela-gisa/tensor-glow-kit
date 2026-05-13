@@ -206,7 +206,7 @@ function AutoScroller({
     <div ref={ref} className={`lp-autoscroll lp-autoscroll-${size}`}>
       {[...images, ...images].map((src, i) => (
         <div key={i} className="lp-autoscroll-item">
-          <img decoding="async" loading="lazy" src={src} alt="" loading="lazy" draggable={false} />
+          <img decoding="async" loading="lazy" src={src} alt="" draggable={false} />
         </div>
       ))}
     </div>
@@ -271,8 +271,8 @@ function Index() {
           <div className="lp-pairs-track">
             {HERO_PAIRS.map((p, i) => (
               <div key={i} className="lp-pair-card" tabIndex={0}>
-                <img decoding="async" loading="lazy" className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} loading="lazy" />
-                <img decoding="async" loading="lazy" className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} loading="lazy" />
+                <img decoding="async" loading="lazy" className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} />
+                <img decoding="async" loading="lazy" className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} />
                 <span className="lp-pair-tap" aria-hidden="true">👆</span>
               </div>
             ))}
