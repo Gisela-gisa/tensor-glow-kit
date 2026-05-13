@@ -7,6 +7,7 @@ export const Route = createFileRoute("/")({
 
 const IMG = {
   pricePre: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/EF6B35ED-E038-4BFA-A14A-9DE3B1D733B1_1.png?v=1778497776",
+  heroBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/8ED4C7D8-167B-45D1-A587-68A68FA61779_2.png?v=1778497777",
   techHero: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5443.jpg?v=1778587423",
   benefitsImg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/Gemini_Generated_Image_3rzicp3rzicp3rzi.png?v=1778578838",
   smartChoice: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/C467FBDD-0016-4870-8602-6269410E7D6B_1.png?v=1778237191",
@@ -37,6 +38,42 @@ const ANN_ITEMS = [
   "30% OFF HASTA AGOTAR STOCK PROMOCIONAL",
   "TECNOLOGÍA DE ESTÁNDAR CLÍNICO  |  PATCH REUTILIZABLE HASTA 30 VECES",
   "ENTREGA EN 10 A 14 DÍAS 🇨🇱",
+  "ENVÍO GRATIS A TODO CHILE 🚚",
+  "MÁS DE 5.000 CHILENAS YA PROBARON ESTHERÉ ✨",
+  "TECNOLOGÍA DE INGENIERÍA FACIAL · ORO 24K",
+  "RITUAL DE 2 MINUTOS AL DÍA",
+  "OFERTA ESPECIAL POR TIEMPO LIMITADO ⏳",
+];
+
+/* ============================================================
+   👇 SHOPIFY LINKS — TROCAR AQUI PARA INTEGRAR COM A LOJA 👇
+   Substitua os valores abaixo pelos URLs OFICIAIS DA SHOPIFY
+   (ex.: https://sualoja.myshopify.com/cart/PRODUCT_VARIANT_ID:1
+   ou link de checkout / página de produto Shopify).
+   Não é necessário alterar layout — apenas trocar a string.
+   ============================================================ */
+const SHOPIFY_LINKS = {
+  // ✅ COLAR AQUI O LINK DO CHECKOUT / CART / PRODUTO SHOPIFY
+  CHECKOUT: "#precio",
+  // ✅ COLAR AQUI O LINK DA PÁGINA DO PRODUTO SHOPIFY
+  PRODUCT: "#precio",
+};
+
+/* ============================================================
+   HOVER SLIDER — pares de imagens (inicial → hover)
+   ============================================================ */
+const HERO_PAIRS: { a: string; b: string }[] = [
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5374.jpg?v=1778497770", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5367.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5363.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5378.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5356.jpg?v=1778497770", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5384.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5373.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5368.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5353.jpg?v=1778497768", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5352.jpg?v=1778497768" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5362.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5379.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5354.jpg?v=1778497768", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5389.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5361.jpg?v=1778497768", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5380.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5360.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5381.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5376.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5365.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5377.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5364.jpg?v=1778497768" },
 ];
 
 const TESTIMONIALS = [
@@ -70,9 +107,9 @@ function Index() {
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShowSticky(window.scrollY > 600);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    // ✅ Sticky bar aparece apenas 8 segundos após carregar a página
+    const t = setTimeout(() => setShowSticky(true), 8000);
+    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -95,17 +132,42 @@ function Index() {
       <div className="lp-wrap">
         {/* HERO */}
         <section className="lp-hero">
-          <div className="lp-hero-video-wrap">
-            <div className="lp-hero-placeholder">
-              <span>🎬</span>
-              AQUÍ VA TU VIDEO HERO<br />(.mp4 · loop · autoplay muted)
-            </div>
+          <div
+            className="lp-hero-video-wrap"
+            style={{
+              backgroundImage: `url(${IMG.heroBg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {/* Badge premium superior direita */}
+          <div className="lp-hero-badge">
+            <span className="lp-hero-badge-dot" />
+            +5.000 chilenas felices
           </div>
           <div className="lp-hero-content">
             <div className="lp-hero-eyebrow">Estheré · Ingeniería Facial</div>
             <h1>Kit Efecto Tensor 360: El secreto para una apariencia que desafía el paso del tiempo. Piel visiblemente más lisa y firme con solo 2 minutos de uso diario.</h1>
-            <a href="#precio" className="btn btn-gold btn-pulse">QUIERO MI EFECTO TENSOR</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART / PRODUTO SHOPIFY (CTA HERO) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">QUIERO MI EFECTO TENSOR</a>
             <p className="lp-hero-guarantee">Garantía de satisfacción o te devolvemos tu dinero.</p>
+          </div>
+        </section>
+
+        {/* HOVER SLIDER PREMIUM — pares de imagens (toque/hover) */}
+        <section className="lp-pairs-sec">
+          <div className="lp-pairs-track">
+            {HERO_PAIRS.map((p, i) => (
+              <div key={i} className="lp-pair-card" tabIndex={0}>
+                <img className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} loading="lazy" />
+                <img className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} loading="lazy" />
+              </div>
+            ))}
+          </div>
+          <div className="lp-pairs-hint">
+            <span className="lp-arrow-blink">‹</span>
+            Desliza · toca para ver el cambio
+            <span className="lp-arrow-blink">›</span>
           </div>
         </section>
 
@@ -157,9 +219,11 @@ function Index() {
             <img src={IMG.pricePre} alt="Kit Efecto Tensor 360" />
           </div>
           <div className="lp-price-old">Antes: $ 44.990</div>
+          <div className="lp-price-save">Ahorra $15.000 • 30% OFF</div>
           <div className="lp-price-new">$ 29.990</div>
           <div>
-            <a href="#" className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA PRINCIPAL) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
           </div>
           <div className="lp-pay-icons">
             {IMG.pay.map((p, i) => (
@@ -193,7 +257,8 @@ function Index() {
             ))}
           </div>
           <div className="text-center" style={{ marginTop: 32 }}>
-            <a href="#precio" className="btn btn-dark">QUIERO MI EFECTO TENSOR</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA TESTIMONIOS) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">QUIERO MI EFECTO TENSOR</a>
           </div>
         </section>
 
@@ -213,7 +278,8 @@ function Index() {
             <li><span className="em">🛡️</span><div><strong>SELLADO — Efecto Tensor.</strong> Parche de Silicona: Sellado mecánico que maximiza la absorción y alisa la textura.</div></li>
           </ul>
           <div className="text-center">
-            <a href="#precio" className="btn btn-gold">Iniciar mi ritual</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA INGENIERÍA) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Iniciar mi ritual</a>
           </div>
         </section>
 
@@ -260,7 +326,8 @@ function Index() {
             ))}
           </div>
           <div style={{ marginTop: 28 }}>
-            <a href="#precio" className="btn btn-dark">RECUPERAR MI FIRMEZA AHORA</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA ELLAS) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">RECUPERAR MI FIRMEZA AHORA</a>
           </div>
         </section>
 
@@ -293,7 +360,8 @@ function Index() {
             ))}
           </div>
           <div style={{ marginTop: 32 }}>
-            <a href="#precio" className="btn btn-gold">Quiero el mío</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA WHY) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Quiero el mío</a>
           </div>
         </section>
 
@@ -310,7 +378,8 @@ function Index() {
             ))}
           </div>
           <div style={{ marginTop: 24 }}>
-            <a href="#precio" className="btn btn-dark">Quiero el mío ahora</a>
+            {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA RESULTADOS) */}
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">Quiero el mío ahora</a>
           </div>
         </section>
 
@@ -356,7 +425,8 @@ function Index() {
               <h4>Compromiso Estheré: Satisfacción garantizada en 30 días</h4>
               <p>Estamos tan seguras de nuestra Ingeniería Facial que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
               <div style={{ marginTop: 16 }}>
-                <a href="#precio" className="btn btn-gold">Quiero con garantía</a>
+                {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA) */}
+                <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Quiero con garantía</a>
               </div>
             </div>
           </div>
@@ -404,7 +474,8 @@ function Index() {
             <div className="gold-divider" />
             <h2>Kit Ingeniería Facial: Resultados de clínica en casa con la sinergia del Oro 24k y el sellado dérmico profundo.</h2>
             <div style={{ marginTop: 24 }}>
-              <a href="#precio" className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
+              {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA FINAL) */}
+              <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
             </div>
           </div>
         </section>
@@ -436,17 +507,20 @@ function Index() {
             <br /><br />
             Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar.
             <br /><br />
-            Este sitio web no es parte de Facebook™, Instagram™ ni Meta Platforms Inc.
+            Este sitio no forma parte del sitio web de Facebook™ o Meta™ ni está afiliado a Meta Platforms, Inc. Además, este sitio NO está respaldado por Facebook™ de ninguna manera. Facebook™ es una marca registrada de Meta Platforms, Inc.
           </div>
         </footer>
       </div>
 
       {/* STICKY */}
       <div className={`lp-sticky ${showSticky ? "visible" : ""}`}>
-        <div>
-          <div className="lp-sticky-price"><span>$ 44.990</span>$ 29.990</div>
+        <div className="lp-sticky-info">
+          <div className="lp-sticky-old">$ 44.990</div>
+          <div className="lp-sticky-save">Ahorra $15.000 • 30% OFF</div>
+          <div className="lp-sticky-now">$ 29.990</div>
         </div>
-        <a href="#precio" className="btn btn-gold" style={{ padding: "12px 22px", fontSize: 13 }}>Quiero el mío</a>
+        {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA STICKY BAR) */}
+        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold lp-sticky-btn">Quiero el mío</a>
       </div>
     </>
   );
@@ -614,6 +688,34 @@ const LP_CSS = `
 .lp-sticky.visible { transform:translateY(0); }
 .lp-sticky-price { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#2C2C2C; }
 .lp-sticky-price span { font-size:13px; color:#777; text-decoration:line-through; font-family:'Lato',sans-serif; font-weight:400; margin-right:6px; }
+
+/* ===== HERO BADGE ===== */
+.lp-hero-badge { position:absolute; top:18px; right:18px; z-index:5; display:inline-flex; align-items:center; gap:8px; background:rgba(255,252,248,.92); backdrop-filter:blur(10px); border:1px solid rgba(204,181,151,.5); color:#3a2f25; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:.04em; padding:8px 14px; border-radius:999px; box-shadow:0 6px 20px rgba(0,0,0,.18); }
+.lp-hero-badge-dot { width:7px; height:7px; border-radius:50%; background:#ccb597; box-shadow:0 0 0 4px rgba(204,181,151,.3); animation:lpDot 1.6s ease-in-out infinite; }
+@keyframes lpDot { 0%,100%{ box-shadow:0 0 0 4px rgba(204,181,151,.3);} 50%{ box-shadow:0 0 0 8px rgba(204,181,151,0);} }
+.lp-hero-video-wrap::before { content:''; position:absolute; inset:0; background:rgba(10,8,5,.28); z-index:1; }
+
+/* ===== HOVER PAIRS SLIDER ===== */
+.lp-pairs-sec { background:#fff; padding:24px 0 18px; }
+.lp-pairs-track { display:flex; gap:14px; overflow-x:auto; padding:8px 5% 14px; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.lp-pairs-track::-webkit-scrollbar { display:none; }
+.lp-pair-card { position:relative; flex:0 0 auto; width:170px; aspect-ratio:3/4; border-radius:18px; overflow:hidden; scroll-snap-align:start; box-shadow:0 8px 24px rgba(138,70,3,.14); border:1px solid rgba(204,181,151,.25); cursor:pointer; }
+.lp-pair-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:opacity .55s ease, transform .8s ease; }
+.lp-pair-card .lp-pair-b { opacity:0; transform:scale(1.04); }
+.lp-pair-card:hover .lp-pair-b, .lp-pair-card:focus .lp-pair-b, .lp-pair-card:active .lp-pair-b { opacity:1; transform:scale(1); }
+.lp-pair-card:hover .lp-pair-a, .lp-pair-card:focus .lp-pair-a, .lp-pair-card:active .lp-pair-a { opacity:0; }
+.lp-pairs-hint { text-align:center; font-family:'Montserrat',sans-serif; font-size:12px; color:var(--text-mid); display:flex; align-items:center; justify-content:center; gap:10px; padding:6px 5% 16px; }
+@media(min-width:768px){ .lp-pair-card { width:200px; } }
+
+/* ===== PRICE SAVE (entre antes/agora) ===== */
+.lp-price-save { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--brown); margin-top:2px; }
+
+/* ===== STICKY refinada ===== */
+.lp-sticky-info { display:flex; flex-direction:column; line-height:1.1; }
+.lp-sticky-old { font-size:12px; color:#999; text-decoration:line-through; font-family:'Lato',sans-serif; }
+.lp-sticky-save { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600; letter-spacing:.04em; color:var(--brown); margin:2px 0; }
+.lp-sticky-now { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#2C2C2C; }
+.lp-sticky-btn { padding:13px 22px !important; font-size:13px !important; }
 
 @media(max-width:600px){
   .lp-wrap .sec { padding:48px 4%; }
