@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -104,13 +104,26 @@ const TESTIMONIALS = [
 ];
 
 const FAQS = [
-  { q: "¿Por qué mis cremas actuales no parecen tener efecto?", a: "La mayoría de los productos pierden gran parte de sus activos por evaporación. El Kit Efecto Tensor 360 utiliza la Ingeniería Facial para crear una oclusión inteligente: el Sellado Dérmico impide la evaporación e impulsa la fórmula hacia las capas más profundas." },
-  { q: "¿Cómo nació la Ingeniería Facial?", a: "Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, utilicé mi formación para investigar y probar hasta encontrar el sérum ideal que combina Oro 24k, Peptídeos, Niacinamida, Colágeno y Ácido Hialurónico, potenciándolo con el Sellado Dérmico para crear un sistema realmente efectivo." },
-  { q: "¿Cómo sé que los parches no se caerán y realmente durarán?", a: "Si se aplican sobre la piel limpia, la tecnología de succión natural los mantiene firmes. Para que duren los 30 usos, simplemente lávalos con agua después de cada aplicación y déjalos secar completamente." },
-  { q: "¿Por qué el precio es tan accesible si es tecnología de lujo?", a: "En Estheré, eliminamos intermediarios para llegar directamente a tu hogar. Al ser un sistema reutilizable hasta 30 veces, el costo por aplicación es una fracción de lo que pagarías en una clínica." },
-  { q: "¿Cuánto cuesta el envío y cuánto tarda en llegar a mi casa?", a: "Ofrecemos Envío Totalmente Gratis a todo Chile. Tu pedido llegará en un plazo de 10 a 15 días hábiles." },
-  { q: "¿Cómo es el ritual diario y cuánto tiempo me tomará?", a: "Por la mañana: aplicas solo el sérum. Por la noche: aplicas el sérum, esperas 10 minutos y luego colocas el Sellado Dérmico." },
+  {
+    q: "¿Cómo es el ritual diario y cuánto tiempo me tomará?",
+    a: "Por la mañana: aplicas solo el sérum. Por la noche: aplicas el sérum, esperas unos minutos a que los activos se asienten y luego colocas el Sellado Dérmico.\n\nTodo el ritual toma solo 2 minutos de aplicación en total. Es un sistema simple, rápido y diseñado para integrarse fácilmente en tu rutina diaria.",
+  },
+  {
+    q: "¿Por qué mis cremas actuales no parecen tener efecto?",
+    a: "La mayoría de las cremas y sérums del mercado contienen algunos activos interesantes, pero no están formulados como sistemas completos, por lo que muchas veces los resultados terminan siendo limitados.\n\nEl Kit Efecto Tensor 360 fue desarrollado para actuar de forma más inteligente y completa, combinando Niacinamida, Péptidos, Colágeno, Ácido Hialurónico y Oro 24k en un único ritual facial.\n\nAdemás, incorporamos el Sellado Dérmico, que no solo ayuda a mejorar visiblemente la textura de la piel, dejándola más lisa y uniforme, sino que también ayuda a mantener y potenciar la absorción de los activos sobre la piel por más tiempo.\n\nAsí, el Oro 24k junto al Sellado Dérmico trabajan en sinergia para maximizar la eficacia del ritual y potenciar resultados visibles de firmeza y luminosidad.",
+  },
+  {
+    q: "¿Cuánto tarda el envío?",
+    a: "Ofrecemos Envío Totalmente Gratis a todo Chile.\nTu pedido llega en un plazo de 10 a 15 días.",
+  },
 ];
+
+/* ============================================================
+   GOLD — destaque premium para termos-chave (luxury skincare)
+   ============================================================ */
+function Gold({ children }: { children: ReactNode }) {
+  return <span className="lp-gold">{children}</span>;
+}
 
 const WHY_CARDS = [
   { n: "01", t: "Tecnología de 3 Etapas", d: "Oro 24k + Colágeno + Sellado. Piel firme, iluminada e hidratada al despertar." },
@@ -295,7 +308,7 @@ function Index() {
           <div className="text-center" style={{ marginBottom: 28 }}>
             <div className="subtitle">Lo que dicen ellas</div>
             <div className="gold-divider" />
-            <h2>Experiencias reales con el Kit Efecto Tensor 360</h2>
+            <h2>Experiencias reales con el <Gold>Kit Efecto Tensor 360</Gold></h2>
           </div>
           <div className="lp-testi-scroll">
             {TESTIMONIALS.map((t, i) => (
@@ -352,10 +365,9 @@ function Index() {
 
         {/* CICLO */}
         <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
-          <div className="subtitle">El ciclo de Ingeniería Facial 360</div>
+          <div className="subtitle">El ciclo de <Gold>Ingeniería Facial</Gold> 360</div>
           <div className="gold-divider" />
-          <h2>Ilumina tu piel durante el día y potencia la firmeza mientras descansas.</h2>
-          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el Sellado Dérmico ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
+          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el <Gold>Sellado Dérmico</Gold> ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
           <div className="lp-inline-img" style={{ marginTop: 30 }}>
             <img src={IMG.benefitsImg} alt="Beneficios" />
           </div>
@@ -443,8 +455,8 @@ function Index() {
           <div className="lp-inline-img">
             <img src={IMG.tuMomento} alt="Tu momento" />
           </div>
-          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El Kit de Ingeniería Facial Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
-          <p>Con el poder del Oro 24k y el sellado dérmico reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
+          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El <Gold>Kit Efecto Tensor 360</Gold> con <Gold>Ingeniería Facial</Gold> de Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
+          <p>Con el poder del <Gold>Oro 24k</Gold> y el <Gold>sellado dérmico</Gold> reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
           <p>Regálate la piel que mereces, hoy mismo.</p>
         </section>
 
@@ -457,8 +469,8 @@ function Index() {
             <div>
               <div className="subtitle">Historia de Ester</div>
               <div className="gold-divider" style={{ margin: "16px 0" }} />
-              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une Oro 24k, Peptídeos, Niacinamida, Colágeno y Ácido Hialurónico.</p>
-              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el Sellado Dérmico. Así nació la Ingeniería Facial, la unión perfecta de estos dos productos en el Kit Efecto Tensor 360.</p>
+              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une <Gold>Oro 24k</Gold>, <Gold>Péptidos</Gold>, <Gold>Niacinamida</Gold>, <Gold>Colágeno</Gold> y <Gold>Ácido Hialurónico</Gold>.</p>
+              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el <Gold>Sellado Dérmico</Gold>. Así nació la <Gold>Ingeniería Facial</Gold>, la unión perfecta de estos dos productos en el <Gold>Kit Efecto Tensor 360</Gold>.</p>
               <p style={{ marginTop: 12 }}>Un sistema de nivel clínico, a una fracción del costo, que hoy más de 5.000 chilenas ya utilizan para transformar su piel en solo 2 minutos."</p>
             </div>
           </div>
@@ -469,7 +481,9 @@ function Index() {
               <h4>Compromiso Estheré: Satisfacción garantizada en 30 días</h4>
               <p>Estamos tan seguras de nuestra Ingeniería Facial que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
               <div style={{ marginTop: 16 }}>
-                {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA) */}
+                {/* ============================================================
+                    ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA)
+                    ============================================================ */}
                 <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Quiero con garantía</a>
               </div>
             </div>
@@ -502,7 +516,7 @@ function Index() {
                   {f.q}
                   <span className="lp-faq-icon">+</span>
                 </button>
-                <div className="lp-faq-ans">{f.a}</div>
+                <div className="lp-faq-ans" style={{ whiteSpace: "pre-line" }}>{f.a}</div>
               </div>
             ))}
           </div>
@@ -564,8 +578,9 @@ function Index() {
         {/* ============================================================
             ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (STICKY BAR)
             Ex.: https://sualoja.myshopify.com/cart/VARIANT_ID:1
+            CTA EM ESPANHOL — manter no estilo dos demais botões da página
             ============================================================ */}
-        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold lp-sticky-btn">Quero o meu!</a>
+        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse lp-sticky-btn">Quiero el mío</a>
       </div>
     </>
   );
@@ -593,6 +608,7 @@ const LP_CSS = `
 .lp-wrap .btn-dark { background:linear-gradient(135deg,#6b3502,#8a4603,#ccb597); color:#fff; padding:16px 36px; border-radius:50px; font-size:14px; box-shadow:0 6px 20px rgba(100,50,0,.3); }
 @keyframes pulse-glow { 0%,100%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 0 rgba(204,181,151,.4); } 50%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 10px rgba(204,181,151,0); } }
 .lp-wrap .btn-pulse { animation:pulse-glow 2.5s ease infinite; }
+.lp-wrap .lp-gold { font-weight:700; background:linear-gradient(135deg,#e7d4b3 0%,#ccb597 50%,#8a4603 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; letter-spacing:.01em; }
 
 .lp-hero { position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#1a1510; }
 .lp-hero-video-wrap { position:absolute; inset:0; background:linear-gradient(135deg,#2a1f14,#0f0c09); display:flex; align-items:center; justify-content:center; }
