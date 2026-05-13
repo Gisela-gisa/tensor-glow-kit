@@ -243,8 +243,15 @@ function Index() {
 
         {/* STEPS — texto ACIMA das imagens hover */}
         <div className="lp-steps">
-          <p><strong>3 pasos</strong>, 2 minutos y resultados extraordinarios</p>
+          <p><strong>2 pasos</strong>, 2 minutos y una piel visiblemente más firme.</p>
         </div>
+
+        {/* HINT — toca las fotos */}
+        <p className="lp-pairs-touch-hint">
+          <span className="lp-touch-arrow" aria-hidden="true">←</span>
+          Toca las fotos para ver
+          <span className="lp-touch-arrow" aria-hidden="true">→</span>
+        </p>
 
         {/* HOVER SLIDER PREMIUM — pares de imagens (toque/hover) */}
         <section className="lp-pairs-sec">
@@ -253,6 +260,7 @@ function Index() {
               <div key={i} className="lp-pair-card" tabIndex={0}>
                 <img className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} loading="lazy" />
                 <img className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} loading="lazy" />
+                <span className="lp-pair-tap" aria-hidden="true">👆</span>
               </div>
             ))}
           </div>
@@ -774,6 +782,13 @@ const LP_CSS = `
 .lp-pair-card:hover .lp-pair-a, .lp-pair-card:focus .lp-pair-a, .lp-pair-card:active .lp-pair-a { opacity:0; }
 .lp-pairs-hint { text-align:center; font-family:'Montserrat',sans-serif; font-size:12px; color:var(--text-mid); display:flex; align-items:center; justify-content:center; gap:10px; padding:6px 5% 16px; }
 @media(min-width:768px){ .lp-pair-card { width:200px; } }
+.lp-pairs-touch-hint { text-align:center; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--brown); display:flex; align-items:center; justify-content:center; gap:12px; padding:8px 5% 4px; }
+.lp-touch-arrow { display:inline-block; font-size:16px; color:var(--gold); animation:lpArrow 1.4s ease-in-out infinite; }
+.lp-touch-arrow:last-child { animation-delay:.7s; }
+@keyframes lpArrow { 0%,100%{ transform:translateX(0); opacity:.6;} 50%{ transform:translateX(4px); opacity:1;} }
+.lp-pair-tap { position:absolute; bottom:10px; right:10px; z-index:2; background:rgba(255,252,248,.92); border:1px solid rgba(204,181,151,.5); border-radius:999px; padding:4px 8px; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,.18); animation:lpTap 1.6s ease-in-out infinite; pointer-events:none; }
+@keyframes lpTap { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-3px);} }
+.lp-pair-card:hover .lp-pair-tap, .lp-pair-card:focus .lp-pair-tap, .lp-pair-card:active .lp-pair-tap { opacity:0; }
 
 /* ===== PRICE SAVE (entre antes/agora) ===== */
 .lp-price-save { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--brown); margin-top:2px; }
