@@ -243,8 +243,15 @@ function Index() {
 
         {/* STEPS — texto ACIMA das imagens hover */}
         <div className="lp-steps">
-          <p><strong>3 pasos</strong>, 2 minutos y resultados extraordinarios</p>
+          <p><strong>2 pasos</strong>, 2 minutos y una piel visiblemente más firme.</p>
         </div>
+
+        {/* HINT — toca las fotos */}
+        <p className="lp-pairs-touch-hint">
+          <span className="lp-touch-arrow" aria-hidden="true">←</span>
+          Toca las fotos para ver
+          <span className="lp-touch-arrow" aria-hidden="true">→</span>
+        </p>
 
         {/* HOVER SLIDER PREMIUM — pares de imagens (toque/hover) */}
         <section className="lp-pairs-sec">
@@ -253,6 +260,7 @@ function Index() {
               <div key={i} className="lp-pair-card" tabIndex={0}>
                 <img className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} loading="lazy" />
                 <img className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} loading="lazy" />
+                <span className="lp-pair-tap" aria-hidden="true">👆</span>
               </div>
             ))}
           </div>
