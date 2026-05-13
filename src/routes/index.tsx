@@ -785,4 +785,37 @@ const LP_CSS = `
   .lp-testi-card { min-width:275px; }
   .lp-hero-content { padding:0 4% 48px; }
 }
+
+/* ===== TRIPLE GRID (DÍA / NOCHE / SELLADO) — premium clean ===== */
+.lp-triple-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:880px; margin:24px auto 28px; }
+.lp-triple-card { background:#fff; border:1px solid rgba(204,181,151,.28); border-radius:16px; padding:22px 18px; text-align:left; box-shadow:0 4px 18px rgba(138,70,3,.07); position:relative; transition:transform .3s ease, box-shadow .3s ease; }
+.lp-triple-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(138,70,3,.12); }
+.lp-triple-card::before { content:''; position:absolute; top:0; left:18px; right:18px; height:2px; background:linear-gradient(90deg,transparent,#ccb597,transparent); }
+.lp-triple-eyebrow { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#8a4603; margin-bottom:6px; }
+.lp-triple-card h4 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--text-dark); margin-bottom:8px; line-height:1.2; }
+.lp-triple-card p { font-size:13.5px; color:var(--text-mid); line-height:1.55; }
+@media(max-width:680px){ .lp-triple-grid { grid-template-columns:1fr; gap:10px; max-width:420px; } .lp-triple-card { padding:18px 16px; } }
+
+/* ===== LUX BENEFIT CARDS ===== */
+.lp-lux-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:980px; margin:0 auto; text-align:left; }
+.lp-lux-card { background:#fff; border:1px solid rgba(204,181,151,.28); border-radius:20px; padding:28px 24px; box-shadow:0 6px 22px rgba(138,70,3,.08); position:relative; overflow:hidden; transition:transform .35s ease, box-shadow .35s ease; }
+.lp-lux-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(138,70,3,.14); }
+.lp-lux-card::after { content:''; position:absolute; inset:auto 0 0 0; height:3px; background:linear-gradient(90deg,#ccb597,#8a4603,#ccb597); opacity:.85; }
+.lp-lux-num { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; color:#ccb597; line-height:1; margin-bottom:10px; letter-spacing:.04em; }
+.lp-lux-card h4 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--text-dark); margin-bottom:10px; line-height:1.2; }
+.lp-lux-card p { font-size:14px; color:var(--text-mid); line-height:1.65; }
+@media(max-width:780px){ .lp-lux-grid { grid-template-columns:1fr; gap:14px; max-width:480px; } }
+
+/* ===== AUTO SCROLLER ===== */
+.lp-autoscroll { display:flex; gap:14px; overflow-x:auto; padding:22px 5%; scrollbar-width:none; -webkit-overflow-scrolling:touch; cursor:grab; scroll-behavior:auto; }
+.lp-autoscroll::-webkit-scrollbar { display:none; }
+.lp-autoscroll:active { cursor:grabbing; }
+.lp-autoscroll-item { flex:0 0 auto; border-radius:16px; overflow:hidden; box-shadow:0 6px 22px rgba(138,70,3,.12); border:1px solid rgba(204,181,151,.25); background:#f7efe2; }
+.lp-autoscroll-item img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; user-select:none; }
+.lp-autoscroll-md .lp-autoscroll-item { width:220px; height:280px; }
+.lp-autoscroll-sm .lp-autoscroll-item { width:160px; height:210px; }
+@media(max-width:600px){
+  .lp-autoscroll-md .lp-autoscroll-item { width:170px; height:220px; }
+  .lp-autoscroll-sm .lp-autoscroll-item { width:130px; height:170px; }
+}
 `;
