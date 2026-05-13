@@ -611,6 +611,27 @@ const LP_CSS = `
 .lp-arrow-blink { color:var(--brown); font-size:18px; font-weight:700; animation:lpArrowBlink 1s ease-in-out infinite; }
 @keyframes lpArrowBlink { 0%,100%{opacity:.2} 50%{opacity:1} }
 .lp-scroll-caption { background:var(--c2); padding:0 5% 24px; text-align:center; font-size:13px; color:var(--text-mid); font-style:italic; }
+.lp-soft-caption { background:transparent; padding:14px 6% 22px; text-align:center; font-size:12.5px; color:var(--text-mid); font-style:italic; font-family:'Cormorant Garamond',serif; letter-spacing:.01em; max-width:560px; margin:0 auto; }
+
+/* Mini image inside CICLO QUOTE block */
+.lp-ciclo-mini-img { max-width:180px; margin:18px auto 22px; border-radius:14px; overflow:hidden; box-shadow:0 6px 22px rgba(138,70,3,.14); border:1px solid rgba(204,181,151,.3); }
+.lp-ciclo-mini-img img { width:100%; height:auto; display:block; }
+@media(max-width:600px){ .lp-ciclo-mini-img { max-width:140px; } }
+
+/* Extra paragraph in CICLO section */
+.lp-ciclo-extra { max-width:680px; margin:14px auto 0; font-size:15px; line-height:1.7; color:var(--text-mid); font-style:italic; }
+
+/* Lux numbers — gold gradient premium */
+.lp-lux-num { background:linear-gradient(135deg,#e7d4b3 0%,#ccb597 45%,#8a4603 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+
+/* Final guarantee badge — centered, premium spacing */
+.lp-final-guarantee { display:flex; justify-content:center; margin-top:22px; }
+.lp-guarantee-badge-final { height:84px; width:auto; object-fit:contain; filter:drop-shadow(0 4px 12px rgba(138,70,3,.18)); }
+@media(max-width:600px){ .lp-guarantee-badge-final { height:72px; } }
+
+/* Footer — disclaimer integrated as one institutional block */
+.lp-footer-disc p { margin:6px 0; }
+.lp-footer-disc p + p { margin-top:8px; }
 
 .lp-checks { background:#fff; padding:24px 5% 56px; }
 .lp-checks-grid { max-width:720px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
