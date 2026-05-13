@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -20,7 +20,8 @@ const IMG = {
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5397.jpg?v=1778497771",
   ],
   ester: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5044_1.jpg?v=1778497770",
-  isabel: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5016_1.png?v=1778237239",
+  isabel: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5016_2.png?v=1778602507",
+  tuMomento: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5486_1.png?v=1778601525",
   ctaBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/EF6B35ED-E038-4BFA-A14A-9DE3B1D733B1.png?v=1778497777",
   pay: [
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_3.png?v=1778241117",
@@ -31,6 +32,22 @@ const IMG = {
   ],
   guarantee: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/download_10.jpg?v=1778241117",
 };
+
+/* Slider 8 — "Ellas ya recibieron su Kit" */
+const ELLAS_RECIBIERON = [
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5502_22cc9e81-1495-4855-94a3-642a1ded2ad9.jpg?v=1778663339",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5501_4aa5ddb7-19db-4d3b-86ec-5e33697bcb1e.jpg?v=1778663338",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5503.jpg?v=1778663338",
+];
+
+/* Slider 9 — "Ellas nos muestran" */
+const ELLAS_MUESTRAN = [
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5477.jpg?v=1778601197",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5438.jpg?v=1778601211",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5475.jpg?v=1778601197",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5484.jpg?v=1778601196",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5480.jpg?v=1778601197",
+];
 
 const ANN_ITEMS = [
   "BIENVENIDA A TU NUEVO RITUAL DE AMOR PROPIO Y CUIDADO",
@@ -101,6 +118,63 @@ const WHY_CARDS = [
   { n: "03", t: "Sistema Facial 360", d: "Día (Volumen), Noche (Reparación) y Sellado (Firmeza). Ingeniería facial en recuperación constante." },
   { n: "04", t: "Resultados Premium, Precio Justo", d: "Calidad de clínica en casa por una fracción del costo. Solo 2 minutos al día para un cambio real." },
 ];
+
+/* ============================================================
+   AUTO SCROLLER — slider horizontal automático + drag manual
+   ============================================================ */
+function AutoScroller({
+  images,
+  size = "md",
+}: {
+  images: string[];
+  size?: "sm" | "md";
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const tick = () => {
+      if (!pausedRef.current && el) {
+        el.scrollLeft += 0.5;
+        if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft = 0;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    const pause = () => {
+      pausedRef.current = true;
+    };
+    const resume = () => {
+      setTimeout(() => {
+        pausedRef.current = false;
+      }, 1800);
+    };
+    el.addEventListener("pointerdown", pause);
+    el.addEventListener("pointerup", resume);
+    el.addEventListener("pointerleave", resume);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resume);
+    return () => {
+      cancelAnimationFrame(raf);
+      el.removeEventListener("pointerdown", pause);
+      el.removeEventListener("pointerup", resume);
+      el.removeEventListener("pointerleave", resume);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resume);
+    };
+  }, []);
+  return (
+    <div ref={ref} className={`lp-autoscroll lp-autoscroll-${size}`}>
+      {[...images, ...images].map((src, i) => (
+        <div key={i} className="lp-autoscroll-item">
+          <img src={src} alt="" loading="lazy" draggable={false} />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -182,15 +256,6 @@ function Index() {
         </div>
 
         {/* SCROLL INFINITO */}
-        <div className="lp-scroll-wrap">
-          <div className="lp-scroll-track">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <div key={i} className="lp-scroll-item">
-                <img src={`https://picsum.photos/seed/esthere${i}/300/300`} alt="" />
-              </div>
-            ))}
-          </div>
-        </div>
         <p className="lp-scroll-caption">Cambios visibles en 30-60 días de uso. La evolución varía según cada piel.</p>
 
         {/* BENEFITS SUBTITLE + CHECKS */}
@@ -272,11 +337,23 @@ function Index() {
               <img src={IMG.techHero} alt="Ingeniería Facial" />
             </div>
           </div>
-          <ul className="lp-action-list">
-            <li><span className="em">☀️</span><div><strong>DÍA — Volumen y Brillo.</strong> Oro 24k + Colágeno: Hidratación profunda y luminosidad inmediata.</div></li>
-            <li><span className="em">🌙</span><div><strong>NOCHE — Reparación.</strong> Péptidos + Niacinamida: Firmeza y tono uniforme mientras descansas.</div></li>
-            <li><span className="em">🛡️</span><div><strong>SELLADO — Efecto Tensor.</strong> Parche de Silicona: Sellado mecánico que maximiza la absorción y alisa la textura.</div></li>
-          </ul>
+          <div className="lp-triple-grid">
+            <article className="lp-triple-card">
+              <div className="lp-triple-eyebrow">Día</div>
+              <h4>Volumen y Brillo</h4>
+              <p>Oro 24k + Colágeno: hidratación profunda y luminosidad inmediata.</p>
+            </article>
+            <article className="lp-triple-card">
+              <div className="lp-triple-eyebrow">Noche</div>
+              <h4>Reparación</h4>
+              <p>Péptidos + Niacinamida: firmeza y tono uniforme mientras descansas.</p>
+            </article>
+            <article className="lp-triple-card">
+              <div className="lp-triple-eyebrow">Sellado</div>
+              <h4>Efecto Tensor</h4>
+              <p>Parche de silicona: sellado mecánico que maximiza la absorción y alisa la textura.</p>
+            </article>
+          </div>
           <div className="text-center">
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA INGENIERÍA) */}
             <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Iniciar mi ritual</a>
@@ -288,17 +365,25 @@ function Index() {
           <div className="subtitle">El ciclo de Ingeniería Facial 360</div>
           <div className="gold-divider" />
           <h2>Ilumina tu piel durante el día y potencia la firmeza mientras descansas.</h2>
-          <div className="lp-ciclo-grid">
-            <img src="https://picsum.photos/seed/ciclo1/600/700" alt="Día" />
-            <img src="https://picsum.photos/seed/ciclo2/600/700" alt="Noche" />
-          </div>
           <div className="lp-inline-img" style={{ marginTop: 30 }}>
             <img src={IMG.benefitsImg} alt="Beneficios" />
           </div>
-          <div className="lp-ben-row" style={{ marginTop: 40 }}>
-            <div className="lp-ben-item"><div className="lp-ben-icon">💧</div><div className="lp-ben-text"><strong>Volumen y Luminosidad</strong><span>El Oro 24k y el Ácido Hialurónico proporcionan un relleno visual inmediato y una hidratación profunda que ilumina el rostro.</span></div></div>
-            <div className="lp-ben-item"><div className="lp-ben-icon">✨</div><div className="lp-ben-text"><strong>Firmeza y Reparación</strong><span>Los Péptidos y el Colágeno actúan en la estructura de la piel para mejorar la firmeza y promover una textura renovada.</span></div></div>
-            <div className="lp-ben-item"><div className="lp-ben-icon">🛡️</div><div className="lp-ben-text"><strong>Oclusión Inteligente</strong><span>El Sellado Dérmico con parche de silicona maximiza la absorción de activos y mantiene la piel descansada, siendo reutilizable hasta 30 veces.</span></div></div>
+          <div className="lp-lux-grid" style={{ marginTop: 44 }}>
+            <article className="lp-lux-card">
+              <div className="lp-lux-num">01</div>
+              <h4>Volumen y Luminosidad</h4>
+              <p>El Oro 24k y el Ácido Hialurónico proporcionan un relleno visual inmediato y una hidratación profunda que ilumina el rostro.</p>
+            </article>
+            <article className="lp-lux-card">
+              <div className="lp-lux-num">02</div>
+              <h4>Firmeza y Reparación</h4>
+              <p>Los Péptidos y el Colágeno actúan en la estructura de la piel para mejorar la firmeza y promover una textura renovada.</p>
+            </article>
+            <article className="lp-lux-card">
+              <div className="lp-lux-num">03</div>
+              <h4>Oclusión Inteligente</h4>
+              <p>El Sellado Dérmico con parche de silicona maximiza la absorción de activos y mantiene la piel descansada, siendo reutilizable hasta 30 veces.</p>
+            </article>
           </div>
         </section>
 
@@ -318,28 +403,10 @@ function Index() {
           <div className="subtitle">Ellas nos muestran</div>
           <div className="gold-divider" />
           <h2>Miles de mujeres en Chile prefieren la sinergia del Oro 24k y la tecnología de sellado para una piel visiblemente más firme y radiante.</h2>
-          <div className="lp-gallery15">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="lp-g-item">
-                <img src={`https://picsum.photos/seed/ellas${i}/400/520`} alt="" />
-              </div>
-            ))}
-          </div>
+          <AutoScroller images={ELLAS_MUESTRAN} size="sm" />
           <div style={{ marginTop: 28 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA ELLAS) */}
             <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">RECUPERAR MI FIRMEZA AHORA</a>
-          </div>
-        </section>
-
-        {/* REELS (sem botão) */}
-        <section className="sec inner">
-          <div className="lp-reel-carousel">
-            {[1,2,3,4,5,6].map((n) => (
-              <div key={n} className="lp-reel-item">
-                <img src={`https://picsum.photos/seed/reel${n}/320/560`} alt={`reel 0${n}`} />
-                <div className="lp-reel-tag">🎬 reel 0{n}</div>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -370,13 +437,7 @@ function Index() {
           <div className="subtitle">Resultados reales</div>
           <div className="gold-divider" />
           <h2>Ellas ya recibieron su Kit de Ingeniería Facial y están listas para transformar su piel en solo 2 minutos al día.</h2>
-          <div className="lp-gallery15">
-            {IMG.results.map((src, i) => (
-              <div key={i} className="lp-g-item">
-                <img src={src} alt={`resultado ${i+1}`} />
-              </div>
-            ))}
-          </div>
+          <AutoScroller images={[...IMG.results, ...ELLAS_RECIBIERON]} size="md" />
           <div style={{ marginTop: 24 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA RESULTADOS) */}
             <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">Quiero el mío ahora</a>
@@ -397,7 +458,7 @@ function Index() {
           <div className="subtitle">Tu Momento, Tu Transformación</div>
           <div className="gold-divider" />
           <div className="lp-inline-img">
-            <img src={IMG.smartChoice} alt="Tu momento" />
+            <img src={IMG.tuMomento} alt="Tu momento" />
           </div>
           <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El Kit de Ingeniería Facial Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
           <p>Con el poder del Oro 24k y el sellado dérmico reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
@@ -723,5 +784,38 @@ const LP_CSS = `
   .lp-ben-row { flex-direction:column; align-items:center; }
   .lp-testi-card { min-width:275px; }
   .lp-hero-content { padding:0 4% 48px; }
+}
+
+/* ===== TRIPLE GRID (DÍA / NOCHE / SELLADO) — premium clean ===== */
+.lp-triple-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; max-width:880px; margin:24px auto 28px; }
+.lp-triple-card { background:#fff; border:1px solid rgba(204,181,151,.28); border-radius:16px; padding:22px 18px; text-align:left; box-shadow:0 4px 18px rgba(138,70,3,.07); position:relative; transition:transform .3s ease, box-shadow .3s ease; }
+.lp-triple-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(138,70,3,.12); }
+.lp-triple-card::before { content:''; position:absolute; top:0; left:18px; right:18px; height:2px; background:linear-gradient(90deg,transparent,#ccb597,transparent); }
+.lp-triple-eyebrow { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#8a4603; margin-bottom:6px; }
+.lp-triple-card h4 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:var(--text-dark); margin-bottom:8px; line-height:1.2; }
+.lp-triple-card p { font-size:13.5px; color:var(--text-mid); line-height:1.55; }
+@media(max-width:680px){ .lp-triple-grid { grid-template-columns:1fr; gap:10px; max-width:420px; } .lp-triple-card { padding:18px 16px; } }
+
+/* ===== LUX BENEFIT CARDS ===== */
+.lp-lux-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:980px; margin:0 auto; text-align:left; }
+.lp-lux-card { background:#fff; border:1px solid rgba(204,181,151,.28); border-radius:20px; padding:28px 24px; box-shadow:0 6px 22px rgba(138,70,3,.08); position:relative; overflow:hidden; transition:transform .35s ease, box-shadow .35s ease; }
+.lp-lux-card:hover { transform:translateY(-4px); box-shadow:0 14px 34px rgba(138,70,3,.14); }
+.lp-lux-card::after { content:''; position:absolute; inset:auto 0 0 0; height:3px; background:linear-gradient(90deg,#ccb597,#8a4603,#ccb597); opacity:.85; }
+.lp-lux-num { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; color:#ccb597; line-height:1; margin-bottom:10px; letter-spacing:.04em; }
+.lp-lux-card h4 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--text-dark); margin-bottom:10px; line-height:1.2; }
+.lp-lux-card p { font-size:14px; color:var(--text-mid); line-height:1.65; }
+@media(max-width:780px){ .lp-lux-grid { grid-template-columns:1fr; gap:14px; max-width:480px; } }
+
+/* ===== AUTO SCROLLER ===== */
+.lp-autoscroll { display:flex; gap:14px; overflow-x:auto; padding:22px 5%; scrollbar-width:none; -webkit-overflow-scrolling:touch; cursor:grab; scroll-behavior:auto; }
+.lp-autoscroll::-webkit-scrollbar { display:none; }
+.lp-autoscroll:active { cursor:grabbing; }
+.lp-autoscroll-item { flex:0 0 auto; border-radius:16px; overflow:hidden; box-shadow:0 6px 22px rgba(138,70,3,.12); border:1px solid rgba(204,181,151,.25); background:#f7efe2; }
+.lp-autoscroll-item img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; user-select:none; }
+.lp-autoscroll-md .lp-autoscroll-item { width:220px; height:280px; }
+.lp-autoscroll-sm .lp-autoscroll-item { width:160px; height:210px; }
+@media(max-width:600px){
+  .lp-autoscroll-md .lp-autoscroll-item { width:170px; height:220px; }
+  .lp-autoscroll-sm .lp-autoscroll-item { width:130px; height:170px; }
 }
 `;
