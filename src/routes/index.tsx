@@ -191,13 +191,6 @@ function AutoScroller({
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [showSticky, setShowSticky] = useState(false);
-
-  useEffect(() => {
-    // ✅ Sticky bar aparece apenas 8 segundos após carregar a página
-    const t = setTimeout(() => setShowSticky(true), 8000);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <>
@@ -594,6 +587,7 @@ const LP_CSS = `
 @keyframes pulse-glow { 0%,100%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 0 rgba(204,181,151,.4); } 50%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 10px rgba(204,181,151,0); } }
 .lp-wrap .btn-pulse { animation:pulse-glow 2.5s ease infinite; }
 .lp-wrap .lp-gold { font-weight:700; background:linear-gradient(135deg,#e7d4b3 0%,#ccb597 50%,#8a4603 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; letter-spacing:.01em; }
+.lp-wrap .lp-gold-solid { background:none; -webkit-text-fill-color:#ccb597; color:#ccb597; }
 
 .lp-hero { position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#1a1510; }
 .lp-hero-video-wrap { position:absolute; inset:0; background:linear-gradient(135deg,#2a1f14,#0f0c09); display:flex; align-items:center; justify-content:center; }
