@@ -308,7 +308,7 @@ function Index() {
           <div className="text-center" style={{ marginBottom: 28 }}>
             <div className="subtitle">Lo que dicen ellas</div>
             <div className="gold-divider" />
-            <h2>Experiencias reales con el Kit Efecto Tensor 360</h2>
+            <h2>Experiencias reales con el <Gold>Kit Efecto Tensor 360</Gold></h2>
           </div>
           <div className="lp-testi-scroll">
             {TESTIMONIALS.map((t, i) => (
@@ -365,10 +365,9 @@ function Index() {
 
         {/* CICLO */}
         <section className="sec inner text-center" style={{ background: "var(--c1)" }}>
-          <div className="subtitle">El ciclo de Ingeniería Facial 360</div>
+          <div className="subtitle">El ciclo de <Gold>Ingeniería Facial</Gold> 360</div>
           <div className="gold-divider" />
-          <h2>Ilumina tu piel durante el día y potencia la firmeza mientras descansas.</h2>
-          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el Sellado Dérmico ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
+          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el <Gold>Sellado Dérmico</Gold> ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
           <div className="lp-inline-img" style={{ marginTop: 30 }}>
             <img src={IMG.benefitsImg} alt="Beneficios" />
           </div>
@@ -456,8 +455,8 @@ function Index() {
           <div className="lp-inline-img">
             <img src={IMG.tuMomento} alt="Tu momento" />
           </div>
-          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El Kit de Ingeniería Facial Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
-          <p>Con el poder del Oro 24k y el sellado dérmico reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
+          <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El <Gold>Kit Efecto Tensor 360</Gold> con <Gold>Ingeniería Facial</Gold> de Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
+          <p>Con el poder del <Gold>Oro 24k</Gold> y el <Gold>sellado dérmico</Gold> reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
           <p>Regálate la piel que mereces, hoy mismo.</p>
         </section>
 
@@ -470,8 +469,8 @@ function Index() {
             <div>
               <div className="subtitle">Historia de Ester</div>
               <div className="gold-divider" style={{ margin: "16px 0" }} />
-              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une Oro 24k, Peptídeos, Niacinamida, Colágeno y Ácido Hialurónico.</p>
-              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el Sellado Dérmico. Así nació la Ingeniería Facial, la unión perfecta de estos dos productos en el Kit Efecto Tensor 360.</p>
+              <p style={{ marginTop: 18 }}>"Soy Ester. Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, tras investigar y testear diversas soluciones, encontré la combinación ideal: un sérum extremadamente potente que une <Gold>Oro 24k</Gold>, <Gold>Péptidos</Gold>, <Gold>Niacinamida</Gold>, <Gold>Colágeno</Gold> y <Gold>Ácido Hialurónico</Gold>.</p>
+              <p style={{ marginTop: 12 }}>Sin embargo, para maximizar estos activos, faltaba una pieza clave: el <Gold>Sellado Dérmico</Gold>. Así nació la <Gold>Ingeniería Facial</Gold>, la unión perfecta de estos dos productos en el <Gold>Kit Efecto Tensor 360</Gold>.</p>
               <p style={{ marginTop: 12 }}>Un sistema de nivel clínico, a una fracción del costo, que hoy más de 5.000 chilenas ya utilizan para transformar su piel en solo 2 minutos."</p>
             </div>
           </div>
@@ -482,7 +481,9 @@ function Index() {
               <h4>Compromiso Estheré: Satisfacción garantizada en 30 días</h4>
               <p>Estamos tan seguras de nuestra Ingeniería Facial que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
               <div style={{ marginTop: 16 }}>
-                {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA) */}
+                {/* ============================================================
+                    ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA)
+                    ============================================================ */}
                 <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Quiero con garantía</a>
               </div>
             </div>
@@ -577,8 +578,9 @@ function Index() {
         {/* ============================================================
             ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (STICKY BAR)
             Ex.: https://sualoja.myshopify.com/cart/VARIANT_ID:1
+            CTA EM ESPANHOL — manter no estilo dos demais botões da página
             ============================================================ */}
-        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold lp-sticky-btn">Quero o meu!</a>
+        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse lp-sticky-btn">Quiero el mío</a>
       </div>
     </>
   );
