@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -121,7 +121,7 @@ const FAQS = [
 /* ============================================================
    GOLD — destaque premium para termos-chave (luxury skincare)
    ============================================================ */
-function Gold({ children }: { children: React.ReactNode }) {
+function Gold({ children }: { children: ReactNode }) {
   return <span className="lp-gold">{children}</span>;
 }
 
