@@ -218,10 +218,6 @@ function Index() {
 
   return (
     <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet"
-      />
       <style>{LP_CSS}</style>
 
       {/* Announcement bar */}
