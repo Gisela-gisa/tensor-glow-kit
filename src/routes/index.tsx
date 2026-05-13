@@ -38,6 +38,10 @@ const ELLAS_RECIBIERON = [
   "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5502_22cc9e81-1495-4855-94a3-642a1ded2ad9.jpg?v=1778663339",
   "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5501_4aa5ddb7-19db-4d3b-86ec-5e33697bcb1e.jpg?v=1778663338",
   "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5503.jpg?v=1778663338",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/31D0CC10-4A4B-450F-A586-B49F3AE4E866.jpg?v=1778704448",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/CBE61483-7A54-45C1-8D48-0AE846962B84.png?v=1778704464",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/C89A6CEE-F8F8-460A-8833-D6F22E2432F6.png?v=1778704463",
+  "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5552.jpg?v=1778704463",
 ];
 
 /* Slider 9 — "Ellas nos muestran" */
@@ -71,9 +75,9 @@ const ANN_ITEMS = [
    ============================================================ */
 const SHOPIFY_LINKS = {
   // ✅ COLAR AQUI O LINK DO CHECKOUT / CART / PRODUTO SHOPIFY
-  CHECKOUT: "#precio",
+  CHECKOUT: "https://estherechile.store/products/kit-efecto-tensor-361",
   // ✅ COLAR AQUI O LINK DA PÁGINA DO PRODUTO SHOPIFY
-  PRODUCT: "#precio",
+  PRODUCT: "https://estherechile.store/products/kit-efecto-tensor-361",
 };
 
 /* ============================================================
@@ -91,6 +95,9 @@ const HERO_PAIRS: { a: string; b: string }[] = [
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5376.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5365.jpg?v=1778497769" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5377.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5364.jpg?v=1778497768" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5363.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5378.jpg?v=1778497769" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5540.jpg?v=1778704462", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5547.jpg?v=1778704462" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5548.jpg?v=1778704462", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5538.jpg?v=1778704463" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5541.jpg?v=1778704461", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5545.jpg?v=1778704462" },
 ];
 
 const TESTIMONIALS = [
