@@ -51,15 +51,15 @@ const ELLAS_MUESTRAN = [
 
 const ANN_ITEMS = [
   "BIENVENIDA A TU NUEVO RITUAL DE AMOR PROPIO Y CUIDADO",
-  "MÁS DE 5.000 CHILENAS YA TRANSFORMARON SU PIEL  |  ENVÍO GRATIS 🇨🇱",
+  "MÁS DE 5.000 CHILENAS YA TRANSFORMARON SU PIEL  |  ENVÍO GRATIS",
   "30% OFF HASTA AGOTAR STOCK PROMOCIONAL",
   "TECNOLOGÍA DE ESTÁNDAR CLÍNICO  |  PATCH REUTILIZABLE HASTA 30 VECES",
-  "ENTREGA EN 10 A 14 DÍAS 🇨🇱",
-  "ENVÍO GRATIS A TODO CHILE 🚚",
-  "MÁS DE 5.000 CHILENAS YA PROBARON ESTHERÉ ✨",
+  "ENTREGA EN 10 A 14 DÍAS",
+  "ENVÍO GRATIS A TODO CHILE",
+  "MÁS DE 5.000 CHILENAS YA PROBARON ESTHERÉ",
   "TECNOLOGÍA DE INGENIERÍA FACIAL · ORO 24K",
   "RITUAL DE 2 MINUTOS AL DÍA",
-  "OFERTA ESPECIAL POR TIEMPO LIMITADO ⏳",
+  "OFERTA ESPECIAL POR TIEMPO LIMITADO",
 ];
 
 /* ============================================================
@@ -81,7 +81,6 @@ const SHOPIFY_LINKS = {
    ============================================================ */
 const HERO_PAIRS: { a: string; b: string }[] = [
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5374.jpg?v=1778497770", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5367.jpg?v=1778497769" },
-  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5363.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5378.jpg?v=1778497769" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5356.jpg?v=1778497770", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5384.jpg?v=1778497769" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5373.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5368.jpg?v=1778497769" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5353.jpg?v=1778497768", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5352.jpg?v=1778497768" },
@@ -91,6 +90,7 @@ const HERO_PAIRS: { a: string; b: string }[] = [
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5360.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5381.jpg?v=1778497769" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5376.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5365.jpg?v=1778497769" },
   { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5377.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5364.jpg?v=1778497768" },
+  { a: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5363.jpg?v=1778497769", b: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5378.jpg?v=1778497769" },
 ];
 
 const TESTIMONIALS = [
@@ -228,6 +228,11 @@ function Index() {
           </div>
         </section>
 
+        {/* STEPS — texto ACIMA das imagens hover */}
+        <div className="lp-steps">
+          <p><strong>3 pasos</strong>, 2 minutos y resultados extraordinarios</p>
+        </div>
+
         {/* HOVER SLIDER PREMIUM — pares de imagens (toque/hover) */}
         <section className="lp-pairs-sec">
           <div className="lp-pairs-track">
@@ -238,25 +243,10 @@ function Index() {
               </div>
             ))}
           </div>
-          <div className="lp-pairs-hint">
-            <span className="lp-arrow-blink">‹</span>
-            Desliza · toca para ver el cambio
-            <span className="lp-arrow-blink">›</span>
-          </div>
         </section>
 
-        {/* STEPS */}
-        <div className="lp-steps">
-          <p><strong>3 pasos</strong>, 2 minutos y resultados extraordinarios</p>
-          <p className="lp-steps-swipe">
-            <span className="lp-arrow-blink">‹</span>
-            Desliza la barra sobre la foto para ver la Ingeniería Facial en acción
-            <span className="lp-arrow-blink">›</span>
-          </p>
-        </div>
-
-        {/* SCROLL INFINITO */}
-        <p className="lp-scroll-caption">Cambios visibles en 30-60 días de uso. La evolución varía según cada piel.</p>
+        {/* Caption discreta abaixo das imagens hover */}
+        <p className="lp-soft-caption">Cambios visibles en 30-60 días de uso. La evolución varía según cada piel.</p>
 
         {/* BENEFITS SUBTITLE + CHECKS */}
         <section className="lp-benefits-sub">
@@ -365,6 +355,7 @@ function Index() {
           <div className="subtitle">El ciclo de Ingeniería Facial 360</div>
           <div className="gold-divider" />
           <h2>Ilumina tu piel durante el día y potencia la firmeza mientras descansas.</h2>
+          <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el Sellado Dérmico ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
           <div className="lp-inline-img" style={{ marginTop: 30 }}>
             <img src={IMG.benefitsImg} alt="Beneficios" />
           </div>
@@ -384,17 +375,6 @@ function Index() {
               <h4>Oclusión Inteligente</h4>
               <p>El Sellado Dérmico con parche de silicona maximiza la absorción de activos y mantiene la piel descansada, siendo reutilizable hasta 30 veces.</p>
             </article>
-          </div>
-        </section>
-
-        {/* GUARANTEE */}
-        <section className="sec inner">
-          <div className="lp-guarantee">
-            <div className="lp-guar-icon"><img src={IMG.guarantee} alt="garantía" /></div>
-            <div>
-              <h4>GARANTÍA DE 30 DÍAS</h4>
-              <p>Si no notas resultados visibles en tu piel, te devolvemos tu dinero. Sin preguntas, sin trámites complicados.</p>
-            </div>
           </div>
         </section>
 
@@ -448,6 +428,9 @@ function Index() {
         <section className="sec inner text-center" style={{ background: "var(--c2)" }}>
           <div className="subtitle">El Ciclo de Ingeniería Facial</div>
           <div className="gold-divider" />
+          <div className="lp-ciclo-mini-img">
+            <img src="https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5306_1.png?v=1778601380" alt="Ciclo de Ingeniería Facial" />
+          </div>
           <h2 style={{ fontStyle: "italic", maxWidth: 720, margin: "0 auto" }}>
             "Volumen de día, renovación de noche y oclusión inteligente mientras descansas: el sistema completo para una piel firme y radiante."
           </h2>
@@ -543,14 +526,14 @@ function Index() {
 
         {/* PAY BAR */}
         <div className="lp-pay-bar">
-          <p>🔒 Compra 100% segura · Envío gratis a todo Chile</p>
+          <p>Compra 100% segura · Envío gratis a todo Chile</p>
           <div className="lp-pay-methods">
             {IMG.pay.map((p, i) => (
               <img key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
             ))}
           </div>
-          <div style={{ marginTop: 14 }}>
-            <img src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge" />
+          <div className="lp-final-guarantee">
+            <img src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge-final" />
           </div>
         </div>
 
@@ -564,11 +547,9 @@ function Index() {
             <a href="/pages/contacto">Contacto</a>
           </div>
           <div className="lp-footer-disc">
-            © {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile
-            <br /><br />
-            Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar.
-            <br /><br />
-            Este sitio no forma parte del sitio web de Facebook™ o Meta™ ni está afiliado a Meta Platforms, Inc. Además, este sitio NO está respaldado por Facebook™ de ninguna manera. Facebook™ es una marca registrada de Meta Platforms, Inc.
+            <p>© {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile</p>
+            <p>Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los resultados individuales pueden variar.</p>
+            <p>Este sitio no forma parte del sitio web de Facebook™ o Meta™ ni está afiliado a Meta Platforms, Inc. Además, este sitio NO está respaldado por Facebook™ de ninguna manera. Facebook™ es una marca registrada de Meta Platforms, Inc.</p>
           </div>
         </footer>
       </div>
@@ -580,8 +561,11 @@ function Index() {
           <div className="lp-sticky-save">Ahorra $15.000 • 30% OFF</div>
           <div className="lp-sticky-now">$ 29.990</div>
         </div>
-        {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA STICKY BAR) */}
-        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold lp-sticky-btn">Quiero el mío</a>
+        {/* ============================================================
+            ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (STICKY BAR)
+            Ex.: https://sualoja.myshopify.com/cart/VARIANT_ID:1
+            ============================================================ */}
+        <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold lp-sticky-btn">Quero o meu!</a>
       </div>
     </>
   );
