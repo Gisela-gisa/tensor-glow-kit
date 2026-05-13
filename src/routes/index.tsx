@@ -689,6 +689,34 @@ const LP_CSS = `
 .lp-sticky-price { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#2C2C2C; }
 .lp-sticky-price span { font-size:13px; color:#777; text-decoration:line-through; font-family:'Lato',sans-serif; font-weight:400; margin-right:6px; }
 
+/* ===== HERO BADGE ===== */
+.lp-hero-badge { position:absolute; top:18px; right:18px; z-index:5; display:inline-flex; align-items:center; gap:8px; background:rgba(255,252,248,.92); backdrop-filter:blur(10px); border:1px solid rgba(204,181,151,.5); color:#3a2f25; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:.04em; padding:8px 14px; border-radius:999px; box-shadow:0 6px 20px rgba(0,0,0,.18); }
+.lp-hero-badge-dot { width:7px; height:7px; border-radius:50%; background:#ccb597; box-shadow:0 0 0 4px rgba(204,181,151,.3); animation:lpDot 1.6s ease-in-out infinite; }
+@keyframes lpDot { 0%,100%{ box-shadow:0 0 0 4px rgba(204,181,151,.3);} 50%{ box-shadow:0 0 0 8px rgba(204,181,151,0);} }
+.lp-hero-video-wrap::before { content:''; position:absolute; inset:0; background:rgba(10,8,5,.28); z-index:1; }
+
+/* ===== HOVER PAIRS SLIDER ===== */
+.lp-pairs-sec { background:#fff; padding:24px 0 18px; }
+.lp-pairs-track { display:flex; gap:14px; overflow-x:auto; padding:8px 5% 14px; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.lp-pairs-track::-webkit-scrollbar { display:none; }
+.lp-pair-card { position:relative; flex:0 0 auto; width:170px; aspect-ratio:3/4; border-radius:18px; overflow:hidden; scroll-snap-align:start; box-shadow:0 8px 24px rgba(138,70,3,.14); border:1px solid rgba(204,181,151,.25); cursor:pointer; }
+.lp-pair-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; transition:opacity .55s ease, transform .8s ease; }
+.lp-pair-card .lp-pair-b { opacity:0; transform:scale(1.04); }
+.lp-pair-card:hover .lp-pair-b, .lp-pair-card:focus .lp-pair-b, .lp-pair-card:active .lp-pair-b { opacity:1; transform:scale(1); }
+.lp-pair-card:hover .lp-pair-a, .lp-pair-card:focus .lp-pair-a, .lp-pair-card:active .lp-pair-a { opacity:0; }
+.lp-pairs-hint { text-align:center; font-family:'Montserrat',sans-serif; font-size:12px; color:var(--text-mid); display:flex; align-items:center; justify-content:center; gap:10px; padding:6px 5% 16px; }
+@media(min-width:768px){ .lp-pair-card { width:200px; } }
+
+/* ===== PRICE SAVE (entre antes/agora) ===== */
+.lp-price-save { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:600; letter-spacing:.06em; color:var(--brown); margin-top:2px; }
+
+/* ===== STICKY refinada ===== */
+.lp-sticky-info { display:flex; flex-direction:column; line-height:1.1; }
+.lp-sticky-old { font-size:12px; color:#999; text-decoration:line-through; font-family:'Lato',sans-serif; }
+.lp-sticky-save { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600; letter-spacing:.04em; color:var(--brown); margin:2px 0; }
+.lp-sticky-now { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#2C2C2C; }
+.lp-sticky-btn { padding:13px 22px !important; font-size:13px !important; }
+
 @media(max-width:600px){
   .lp-wrap .sec { padding:48px 4%; }
   .lp-guarantee { flex-direction:column; }
