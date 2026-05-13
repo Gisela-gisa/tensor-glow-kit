@@ -3,6 +3,23 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    links: [
+      { rel: "preconnect", href: "https://cdn.shopify.com", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "preload",
+        as: "image",
+        href: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/8ED4C7D8-167B-45D1-A587-68A68FA61779_2.png?v=1778497777",
+        fetchpriority: "high",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap",
+      },
+    ],
+  }),
 });
 
 const IMG = {
@@ -189,7 +206,7 @@ function AutoScroller({
     <div ref={ref} className={`lp-autoscroll lp-autoscroll-${size}`}>
       {[...images, ...images].map((src, i) => (
         <div key={i} className="lp-autoscroll-item">
-          <img src={src} alt="" loading="lazy" draggable={false} />
+          <img decoding="async" loading="lazy" src={src} alt="" draggable={false} />
         </div>
       ))}
     </div>
@@ -201,10 +218,6 @@ function Index() {
 
   return (
     <>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet"
-      />
       <style>{LP_CSS}</style>
 
       {/* Announcement bar */}
@@ -258,8 +271,8 @@ function Index() {
           <div className="lp-pairs-track">
             {HERO_PAIRS.map((p, i) => (
               <div key={i} className="lp-pair-card" tabIndex={0}>
-                <img className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} loading="lazy" />
-                <img className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} loading="lazy" />
+                <img decoding="async" loading="lazy" className="lp-pair-a" src={p.a} alt={`look ${i + 1} antes`} />
+                <img decoding="async" loading="lazy" className="lp-pair-b" src={p.b} alt={`look ${i + 1} después`} />
                 <span className="lp-pair-tap" aria-hidden="true">👆</span>
               </div>
             ))}
@@ -292,7 +305,7 @@ function Index() {
         {/* PRICE CTA */}
         <section id="precio" className="lp-price-cta">
           <div className="lp-price-img">
-            <img src={IMG.pricePre} alt="Kit Efecto Tensor 360" />
+            <img decoding="async" loading="lazy" src={IMG.pricePre} alt="Kit Efecto Tensor 360" />
           </div>
           <div className="lp-price-old">Antes: $ 44.990</div>
           <div className="lp-price-save">Ahorra $15.000 • 30% OFF</div>
@@ -303,11 +316,11 @@ function Index() {
           </div>
           <div className="lp-pay-icons">
             {IMG.pay.map((p, i) => (
-              <img key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
+              <img decoding="async" loading="lazy" key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
             ))}
           </div>
           <div className="lp-pay-icons" style={{ marginTop: 10 }}>
-            <img src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge" />
+            <img decoding="async" loading="lazy" src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge" />
           </div>
         </section>
 
@@ -345,7 +358,7 @@ function Index() {
             <div className="gold-divider" />
             <h2>Kit Efecto Tensor 360 con Ingeniería Facial de Triple Acción: un sistema inteligente que potencia la absorción de activos para resultados visibles.</h2>
             <div className="lp-inline-img">
-              <img src={IMG.techHero} alt="Ingeniería Facial" />
+              <img decoding="async" loading="lazy" src={IMG.techHero} alt="Ingeniería Facial" />
             </div>
           </div>
           <div className="lp-triple-grid">
@@ -377,7 +390,7 @@ function Index() {
           <div className="gold-divider" />
           <p className="lp-ciclo-extra">Y la magia ocurre por la noche: una vez que el sérum se asienta sobre la piel, el <Gold solid>Sellado Dérmico</Gold> ayuda a potenciar aún más la absorción de los activos, maximizando la apariencia de firmeza, suavidad y luminosidad mientras descansas.</p>
           <div className="lp-inline-img" style={{ marginTop: 30 }}>
-            <img src={IMG.benefitsImg} alt="Beneficios" />
+            <img decoding="async" loading="lazy" src={IMG.benefitsImg} alt="Beneficios" />
           </div>
           <div className="lp-lux-grid" style={{ marginTop: 44 }}>
             <article className="lp-lux-card">
@@ -415,7 +428,7 @@ function Index() {
           <div className="subtitle">La elección inteligente</div>
           <div className="gold-divider" />
           <div className="lp-inline-img">
-            <img src={IMG.smartChoice} alt="La elección inteligente" />
+            <img decoding="async" loading="lazy" src={IMG.smartChoice} alt="La elección inteligente" />
           </div>
           <div className="lp-why-grid">
             {WHY_CARDS.map((c) => (
@@ -449,7 +462,7 @@ function Index() {
           <div className="subtitle">El Ciclo de Ingeniería Facial</div>
           <div className="gold-divider" />
           <div className="lp-ciclo-mini-img">
-            <img src="https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5306_1.png?v=1778601380" alt="Ciclo de Ingeniería Facial" />
+            <img decoding="async" src="https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5306_1.png?v=1778601380" alt="Ciclo de Ingeniería Facial" />
           </div>
           <h2 style={{ fontStyle: "italic", maxWidth: 720, margin: "0 auto" }}>
             "Volumen de día, renovación de noche y oclusión inteligente mientras descansas: el sistema completo para una piel firme y radiante."
@@ -461,7 +474,7 @@ function Index() {
           <div className="subtitle">Tu Momento, Tu Transformación</div>
           <div className="gold-divider" />
           <div className="lp-inline-img">
-            <img src={IMG.tuMomento} alt="Tu momento" />
+            <img decoding="async" loading="lazy" src={IMG.tuMomento} alt="Tu momento" />
           </div>
           <p>Imagina despertar cada mañana con la confianza de un rostro que refleja tu luz natural. El <Gold solid>Kit Efecto Tensor 360</Gold> con <Gold solid>Ingeniería Facial</Gold> de Estheré convierte 2 minutos de tu día en un ritual de renovación profunda.</p>
           <p>Con el poder del <Gold solid>Oro 24k</Gold> y el <Gold solid>sellado dérmico</Gold> reutilizable hasta 30 veces, obtienes resultados de alto nivel por una fracción del costo.</p>
@@ -472,7 +485,7 @@ function Index() {
         <section className="lp-founder">
           <div className="lp-two-col inner">
             <div className="lp-img-block">
-              <img src={IMG.ester} alt="Ester, fundadora" />
+              <img decoding="async" loading="lazy" src={IMG.ester} alt="Ester, fundadora" />
             </div>
             <div>
               <div className="subtitle">Historia de Ester</div>
@@ -484,7 +497,7 @@ function Index() {
           </div>
 
           <div className="lp-guarantee" style={{ marginTop: 40, maxWidth: 880, marginLeft: "auto", marginRight: "auto" }}>
-            <div className="lp-guar-icon"><img src={IMG.guarantee} alt="garantía" /></div>
+            <div className="lp-guar-icon"><img decoding="async" loading="lazy" src={IMG.guarantee} alt="garantía" /></div>
             <div>
               <h4>Compromiso Estheré: Satisfacción garantizada en 30 días</h4>
               <p>Estamos tan seguras de nuestra Ingeniería Facial que, si no estás satisfecha con los resultados tras usar correctamente el kit, solo debes devolver los frascos (incluso vacíos) para recibir el reembolso completo.</p>
@@ -504,7 +517,7 @@ function Index() {
           <div className="gold-divider" />
           <h2 style={{ marginBottom: 24 }}>"El testimonio de Isabel se repite en más de 5.000 chilenas… el tuyo puede ser el próximo."</h2>
           <div className="lp-isabel-img">
-            <img src={IMG.isabel} alt="Isabel" />
+            <img decoding="async" loading="lazy" src={IMG.isabel} alt="Isabel" />
           </div>
           <div className="lp-isabel-text">
             <p>"Después de años probando de todo sin éxito, la Ingeniería Facial cambió mi perspectiva. La unión del Oro 24k con el Sellado Dérmico es el equilibrio que mi piel necesitaba para recuperar su firmeza y luminosidad.</p>
@@ -533,7 +546,7 @@ function Index() {
         {/* CTA FINAL */}
         <section className="lp-final-reel">
           <div className="lp-final-reel-bg">
-            <img src={IMG.ctaBg} alt="" />
+            <img decoding="async" loading="lazy" src={IMG.ctaBg} alt="" />
           </div>
           <div className="lp-final-reel-content">
             <div className="subtitle" style={{ color: "var(--gold)" }}>El inicio de tu transformación</div>
@@ -551,11 +564,11 @@ function Index() {
           <p>Compra 100% segura · Envío gratis a todo Chile</p>
           <div className="lp-pay-methods">
             {IMG.pay.map((p, i) => (
-              <img key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
+              <img decoding="async" loading="lazy" key={i} src={p} alt="medio de pago" className="lp-pay-icon-img" />
             ))}
           </div>
           <div className="lp-final-guarantee">
-            <img src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge-final" />
+            <img decoding="async" loading="lazy" src={IMG.guarantee} alt="Garantía 30 días" className="lp-guarantee-badge-final" />
           </div>
         </div>
 
