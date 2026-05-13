@@ -104,13 +104,26 @@ const TESTIMONIALS = [
 ];
 
 const FAQS = [
-  { q: "¿Por qué mis cremas actuales no parecen tener efecto?", a: "La mayoría de los productos pierden gran parte de sus activos por evaporación. El Kit Efecto Tensor 360 utiliza la Ingeniería Facial para crear una oclusión inteligente: el Sellado Dérmico impide la evaporación e impulsa la fórmula hacia las capas más profundas." },
-  { q: "¿Cómo nació la Ingeniería Facial?", a: "Como dermatóloga, noté que los productos de elección no lograban el efecto esperado en la piel. Por eso, utilicé mi formación para investigar y probar hasta encontrar el sérum ideal que combina Oro 24k, Peptídeos, Niacinamida, Colágeno y Ácido Hialurónico, potenciándolo con el Sellado Dérmico para crear un sistema realmente efectivo." },
-  { q: "¿Cómo sé que los parches no se caerán y realmente durarán?", a: "Si se aplican sobre la piel limpia, la tecnología de succión natural los mantiene firmes. Para que duren los 30 usos, simplemente lávalos con agua después de cada aplicación y déjalos secar completamente." },
-  { q: "¿Por qué el precio es tan accesible si es tecnología de lujo?", a: "En Estheré, eliminamos intermediarios para llegar directamente a tu hogar. Al ser un sistema reutilizable hasta 30 veces, el costo por aplicación es una fracción de lo que pagarías en una clínica." },
-  { q: "¿Cuánto cuesta el envío y cuánto tarda en llegar a mi casa?", a: "Ofrecemos Envío Totalmente Gratis a todo Chile. Tu pedido llegará en un plazo de 10 a 15 días hábiles." },
-  { q: "¿Cómo es el ritual diario y cuánto tiempo me tomará?", a: "Por la mañana: aplicas solo el sérum. Por la noche: aplicas el sérum, esperas 10 minutos y luego colocas el Sellado Dérmico." },
+  {
+    q: "¿Cómo es el ritual diario y cuánto tiempo me tomará?",
+    a: "Por la mañana: aplicas solo el sérum. Por la noche: aplicas el sérum, esperas unos minutos a que los activos se asienten y luego colocas el Sellado Dérmico.\n\nTodo el ritual toma solo 2 minutos de aplicación en total. Es un sistema simple, rápido y diseñado para integrarse fácilmente en tu rutina diaria.",
+  },
+  {
+    q: "¿Por qué mis cremas actuales no parecen tener efecto?",
+    a: "La mayoría de las cremas y sérums del mercado contienen algunos activos interesantes, pero no están formulados como sistemas completos, por lo que muchas veces los resultados terminan siendo limitados.\n\nEl Kit Efecto Tensor 360 fue desarrollado para actuar de forma más inteligente y completa, combinando Niacinamida, Péptidos, Colágeno, Ácido Hialurónico y Oro 24k en un único ritual facial.\n\nAdemás, incorporamos el Sellado Dérmico, que no solo ayuda a mejorar visiblemente la textura de la piel, dejándola más lisa y uniforme, sino que también ayuda a mantener y potenciar la absorción de los activos sobre la piel por más tiempo.\n\nAsí, el Oro 24k junto al Sellado Dérmico trabajan en sinergia para maximizar la eficacia del ritual y potenciar resultados visibles de firmeza y luminosidad.",
+  },
+  {
+    q: "¿Cuánto tarda el envío?",
+    a: "Ofrecemos Envío Totalmente Gratis a todo Chile.\nTu pedido llega en un plazo de 10 a 15 días.",
+  },
 ];
+
+/* ============================================================
+   GOLD — destaque premium para termos-chave (luxury skincare)
+   ============================================================ */
+function Gold({ children }: { children: React.ReactNode }) {
+  return <span className="lp-gold">{children}</span>;
+}
 
 const WHY_CARDS = [
   { n: "01", t: "Tecnología de 3 Etapas", d: "Oro 24k + Colágeno + Sellado. Piel firme, iluminada e hidratada al despertar." },
