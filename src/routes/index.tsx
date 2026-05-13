@@ -548,10 +548,10 @@ function Index() {
         <footer className="lp-footer">
           <div className="lp-footer-brand">ESTHERÉ</div>
           <div className="lp-footer-links">
-            <a href="/policies/privacy-policy">Política de Privacidad</a>
-            <a href="/policies/terms-of-service">Términos y Condiciones</a>
-            <a href="/policies/refund-policy">Política de Devoluciones</a>
-            <a href="/pages/contacto">Contacto</a>
+            <a href="https://estherechile.store/pages/contacto">Contacto</a>
+            <a href="https://estherechile.store/pages/terminos-de-servicio">Términos de Servicio</a>
+            <a href="https://estherechile.store/pages/politica-de-reembolso-y-devoluciones">Política de Reembolso y Devoluciones</a>
+            <a href="https://estherechile.store/pages/politicas-de-envio">Política de Envío</a>
           </div>
           <div className="lp-footer-disc">
             <p>© {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile</p>
