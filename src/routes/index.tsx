@@ -516,7 +516,7 @@ function Index() {
                   {f.q}
                   <span className="lp-faq-icon">+</span>
                 </button>
-                <div className="lp-faq-ans">{f.a}</div>
+                <div className="lp-faq-ans" style={{ whiteSpace: "pre-line" }}>{f.a}</div>
               </div>
             ))}
           </div>
