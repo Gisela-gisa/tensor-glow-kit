@@ -620,6 +620,8 @@ const LP_CSS = `
 .lp-wrap .btn-dark { background:linear-gradient(135deg,#6b3502,#8a4603,#ccb597); color:#fff; padding:16px 36px; border-radius:50px; font-size:14px; box-shadow:0 6px 20px rgba(100,50,0,.3); }
 @keyframes pulse-glow { 0%,100%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 0 rgba(204,181,151,.4); } 50%{ box-shadow:0 6px 24px rgba(138,70,3,.3),0 0 0 10px rgba(204,181,151,0); } }
 .lp-wrap .btn-pulse { animation:pulse-glow 2.5s ease infinite; }
+.lp-wrap .btn-placeholder { font-size:22px !important; font-weight:900 !important; letter-spacing:.14em !important; text-transform:uppercase; padding:22px 44px !important; }
+@media (max-width: 720px){ .lp-wrap .btn-placeholder { font-size:18px !important; padding:18px 28px !important; letter-spacing:.1em !important; } }
 .lp-wrap .lp-gold { font-weight:800; color:#a87a3a; -webkit-text-fill-color:#a87a3a; letter-spacing:.01em; background:none; }
 .lp-wrap .lp-gold-solid { font-weight:800; color:#a87a3a; -webkit-text-fill-color:#a87a3a; background:none; }
 
