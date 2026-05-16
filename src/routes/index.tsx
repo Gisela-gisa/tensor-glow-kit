@@ -98,6 +98,23 @@ const SHOPIFY_LINKS = {
 };
 
 /* ============================================================
+   👇👇👇 INSIRA AQUI OS LINKS DE CADA BOTÃO 👇👇👇
+   Cada botão tem um link próprio — basta substituir a string
+   "INSIRA_AQUI_O_LINK_DO_BOTAO_X" pelo URL real do Shopify.
+   ============================================================ */
+const BTN_LINKS = {
+  BOTAO_1_HERO:        "INSIRA_AQUI_O_LINK_DO_BOTAO_1_HERO",
+  BOTAO_2_PRICE:       "INSIRA_AQUI_O_LINK_DO_BOTAO_2_PRICE",
+  BOTAO_3_TESTIMONIOS: "INSIRA_AQUI_O_LINK_DO_BOTAO_3_TESTIMONIOS",
+  BOTAO_4_INGENIERIA:  "INSIRA_AQUI_O_LINK_DO_BOTAO_4_INGENIERIA",
+  BOTAO_5_ELLAS:       "INSIRA_AQUI_O_LINK_DO_BOTAO_5_ELLAS",
+  BOTAO_6_WHY:         "INSIRA_AQUI_O_LINK_DO_BOTAO_6_WHY",
+  BOTAO_7_RESULTADOS:  "INSIRA_AQUI_O_LINK_DO_BOTAO_7_RESULTADOS",
+  BOTAO_8_GARANTIA:    "INSIRA_AQUI_O_LINK_DO_BOTAO_8_GARANTIA",
+  BOTAO_9_FINAL:       "INSIRA_AQUI_O_LINK_DO_BOTAO_9_FINAL",
+};
+
+/* ============================================================
    HOVER SLIDER — pares de imagens (inicial → hover)
    ============================================================ */
 const HERO_PAIRS: { a: string; b: string }[] = [
@@ -249,7 +266,7 @@ function Index() {
             <div className="lp-hero-eyebrow">Estheré · Ingeniería Facial</div>
             <h1>Kit Efecto Tensor 360: El secreto para una apariencia que desafía el paso del tiempo. Piel visiblemente más lisa y firme con solo 2 minutos de uso diario.</h1>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART / PRODUTO SHOPIFY (CTA HERO) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_1_HERO} className="btn btn-gold btn-pulse">¡Quiero mi Kit Tensor 360!</a>
             <p className="lp-hero-guarantee">Garantía de satisfacción o te devolvemos tu dinero.</p>
           </div>
         </section>
@@ -314,7 +331,7 @@ function Index() {
           <div className="lp-price-new">$ 24.990</div>
           <div>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA PRINCIPAL) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_2_PRICE} className="btn btn-gold btn-pulse">Obtener mi Elixir de Oro</a>
           </div>
           <div className="lp-pay-icons">
             {IMG.pay.map((p, i) => (
@@ -349,7 +366,7 @@ function Index() {
           </div>
           <div className="text-center" style={{ marginTop: 32 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA TESTIMONIOS) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_3_TESTIMONIOS} className="btn btn-dark">Ver mi oferta de 30 días</a>
           </div>
         </section>
 
@@ -382,7 +399,7 @@ function Index() {
           </div>
           <div className="text-center">
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA INGENIERÍA) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_4_INGENIERIA} className="btn btn-gold">Comprar con Envío Gratis</a>
           </div>
         </section>
 
@@ -421,7 +438,7 @@ function Index() {
           <AutoScroller images={ELLAS_MUESTRAN} size="sm" />
           <div style={{ marginTop: 28 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA ELLAS) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_5_ELLAS} className="btn btn-dark">Aprovechar promoción hoy</a>
           </div>
         </section>
 
@@ -443,7 +460,7 @@ function Index() {
           </div>
           <div style={{ marginTop: 32 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA WHY) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_6_WHY} className="btn btn-gold">Asegurar mi Kit con descuento</a>
           </div>
         </section>
 
@@ -455,7 +472,7 @@ function Index() {
           <AutoScroller images={[...IMG.results, ...ELLAS_RECIBIERON]} size="md" />
           <div style={{ marginTop: 24 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA RESULTADOS) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark btn-placeholder">INSIRA O LINK AQUI</a>
+            <a href={BTN_LINKS.BOTAO_7_RESULTADOS} className="btn btn-dark">Iniciar mi ciclo de cuidado</a>
           </div>
         </section>
 
@@ -559,7 +576,7 @@ function Index() {
             <h2>Kit Ingeniería Facial: Resultados de clínica en casa con la sinergia del Oro 24k y el sellado dérmico profundo.</h2>
             <div style={{ marginTop: 24 }}>
               {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA FINAL) */}
-              <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse btn-placeholder">INSIRA O LINK AQUI</a>
+              <a href={BTN_LINKS.BOTAO_9_FINAL} className="btn btn-gold btn-pulse">Sí, quiero mi envío gratis</a>
             </div>
           </div>
         </section>
