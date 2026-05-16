@@ -482,7 +482,7 @@ export function Index() {
           <div className="subtitle">El Ciclo de Ingeniería Facial</div>
           <div className="gold-divider" />
           <div className="lp-ciclo-mini-img">
-            <img decoding="async" src="https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5306_1.png?v=1778601380" alt="Ciclo de Ingeniería Facial" />
+            <img decoding="async" src="https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1_1_82b5c1da-db41-4ddf-9834-b4eaa6e58969.png?v=1778955139" alt="Ciclo de Ingeniería Facial" />
           </div>
           <h2 style={{ maxWidth: 720, margin: "0 auto" }}>
             Sérum Concentrado de 17ml + Sellado Dérmico Reutilizable (30 usos)
