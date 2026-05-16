@@ -686,6 +686,8 @@ const LP_CSS = `
 .lp-price-img { max-width:340px; margin:0 auto 24px; }
 .lp-price-img img { width:100%; height:auto; display:block; border-radius:14px; }
 .lp-price-old { font-size:15px; color:var(--text-light); text-decoration:line-through; }
+.lp-price-top-text { font-family:'Montserrat',sans-serif; font-size:13px; letter-spacing:.05em; color:var(--text-dark); max-width:520px; margin:0 auto 18px; text-transform:uppercase; }
+.lp-price-cycle { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:var(--gold); margin:14px 0 8px; }
 .lp-price-new { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,6vw,54px); font-weight:600; color:var(--text-dark); line-height:1.1; margin:4px 0 22px; }
 .lp-pay-icons { margin-top:16px; display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
 .lp-pay-icon-img { height:28px; width:auto; object-fit:contain; }
