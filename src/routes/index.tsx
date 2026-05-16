@@ -249,7 +249,7 @@ function Index() {
             <div className="lp-hero-eyebrow">Estheré · Ingeniería Facial</div>
             <h1>Kit Efecto Tensor 360: El secreto para una apariencia que desafía el paso del tiempo. Piel visiblemente más lisa y firme con solo 2 minutos de uso diario.</h1>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART / PRODUTO SHOPIFY (CTA HERO) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">QUIERO MI EFECTO TENSOR</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse btn-placeholder">INSIRA O LINK AQUI</a>
             <p className="lp-hero-guarantee">Garantía de satisfacción o te devolvemos tu dinero.</p>
           </div>
         </section>
@@ -314,7 +314,7 @@ function Index() {
           <div className="lp-price-new">$ 24.990</div>
           <div>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA PRINCIPAL) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse btn-placeholder">INSIRA O LINK AQUI</a>
           </div>
           <div className="lp-pay-icons">
             {IMG.pay.map((p, i) => (
@@ -349,7 +349,7 @@ function Index() {
           </div>
           <div className="text-center" style={{ marginTop: 32 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA TESTIMONIOS) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">QUIERO MI EFECTO TENSOR</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark btn-placeholder">INSIRA O LINK AQUI</a>
           </div>
         </section>
 
@@ -382,7 +382,7 @@ function Index() {
           </div>
           <div className="text-center">
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA INGENIERÍA) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Iniciar mi ritual</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-placeholder">INSIRA O LINK AQUI</a>
           </div>
         </section>
 
@@ -421,7 +421,7 @@ function Index() {
           <AutoScroller images={ELLAS_MUESTRAN} size="sm" />
           <div style={{ marginTop: 28 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA ELLAS) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">RECUPERAR MI FIRMEZA AHORA</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark btn-placeholder">INSIRA O LINK AQUI</a>
           </div>
         </section>
 
@@ -443,7 +443,7 @@ function Index() {
           </div>
           <div style={{ marginTop: 32 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA WHY) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Quiero el mío</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-placeholder">INSIRA O LINK AQUI</a>
           </div>
         </section>
 
@@ -455,7 +455,7 @@ function Index() {
           <AutoScroller images={[...IMG.results, ...ELLAS_RECIBIERON]} size="md" />
           <div style={{ marginTop: 24 }}>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA RESULTADOS) */}
-            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark">Quiero el mío ahora</a>
+            <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-dark btn-placeholder">INSIRA O LINK AQUI</a>
           </div>
         </section>
 
@@ -510,7 +510,7 @@ function Index() {
                 {/* ============================================================
                     ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA)
                     ============================================================ */}
-                <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold">Quiero con garantía</a>
+                <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-placeholder">INSIRA O LINK AQUI</a>
               </div>
             </div>
           </div>
@@ -559,7 +559,7 @@ function Index() {
             <h2>Kit Ingeniería Facial: Resultados de clínica en casa con la sinergia del Oro 24k y el sellado dérmico profundo.</h2>
             <div style={{ marginTop: 24 }}>
               {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA FINAL) */}
-              <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
+              <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse btn-placeholder">INSIRA O LINK AQUI</a>
             </div>
           </div>
         </section>
