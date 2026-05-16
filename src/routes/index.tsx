@@ -46,6 +46,7 @@ const IMG = {
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5036.png?v=1778237238",
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5037.webp?v=1778237237",
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/visa.png?v=1778585309",
+    "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/download_5.png?v=1778956706",
   ],
   guarantee: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/download_10.jpg?v=1778241117",
 };
@@ -230,7 +231,7 @@ function AutoScroller({
   );
 }
 
-function Index() {
+export function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
