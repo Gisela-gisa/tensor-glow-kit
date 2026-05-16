@@ -231,7 +231,7 @@ function AutoScroller({
   );
 }
 
-function Index() {
+export function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
