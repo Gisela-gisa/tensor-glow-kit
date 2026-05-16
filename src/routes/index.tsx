@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 });
 
 const IMG = {
-  pricePre: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/EF6B35ED-E038-4BFA-A14A-9DE3B1D733B1_1.png?v=1778497776",
+  pricePre: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1.png?v=1778927125",
   heroBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/8ED4C7D8-167B-45D1-A587-68A68FA61779_2.png?v=1778497777",
-  techHero: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5443.jpg?v=1778587423",
+  techHero: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5614.png?v=1778927125",
   benefitsImg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/Gemini_Generated_Image_3rzicp3rzicp3rzi.png?v=1778578838",
   smartChoice: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/C467FBDD-0016-4870-8602-6269410E7D6B_1.png?v=1778237191",
   results: [
@@ -39,7 +39,7 @@ const IMG = {
   ester: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5044_1.jpg?v=1778497770",
   isabel: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5016_2.png?v=1778602507",
   tuMomento: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5486_1.png?v=1778601525",
-  ctaBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/EF6B35ED-E038-4BFA-A14A-9DE3B1D733B1.png?v=1778497777",
+  ctaBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1.png?v=1778927125",
   pay: [
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_3.png?v=1778241117",
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_4.png?v=1778241117",
@@ -304,12 +304,14 @@ function Index() {
 
         {/* PRICE CTA */}
         <section id="precio" className="lp-price-cta">
+          <p className="lp-price-top-text">Sérum Concentrado de 17ml + Sellado Dérmico Reutilizable (30 usos)</p>
           <div className="lp-price-img">
             <img decoding="async" loading="lazy" src={IMG.pricePre} alt="Kit Efecto Tensor 360" />
           </div>
-          <div className="lp-price-old">Antes: $ 44.990</div>
-          <div className="lp-price-save">Ahorra $15.000 • 30% OFF</div>
-          <div className="lp-price-new">$ 29.990</div>
+          <p className="lp-price-cycle">Ciclo de 30 Días de Ingeniería Facial</p>
+          <div className="lp-price-old">Antes: $ 32.990</div>
+          <div className="lp-price-save">Ahorra $8.000 • 24% OFF</div>
+          <div className="lp-price-new">$ 24.990</div>
           <div>
             {/* ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA PRINCIPAL) */}
             <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-pulse">Quiero mi Efecto Tensor</a>
@@ -464,9 +466,12 @@ function Index() {
           <div className="lp-ciclo-mini-img">
             <img decoding="async" src="https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5306_1.png?v=1778601380" alt="Ciclo de Ingeniería Facial" />
           </div>
-          <h2 style={{ fontStyle: "italic", maxWidth: 720, margin: "0 auto" }}>
-            "Volumen de día, renovación de noche y oclusión inteligente mientras descansas: el sistema completo para una piel firme y radiante."
+          <h2 style={{ maxWidth: 720, margin: "0 auto" }}>
+            Sérum Concentrado de 17ml + Sellado Dérmico Reutilizable (30 usos)
           </h2>
+          <p style={{ marginTop: 12, fontStyle: "italic", color: "var(--gold)" }}>
+            Ciclo de 30 Días de Ingeniería Facial
+          </p>
         </section>
 
         {/* TU MOMENTO (substitui ciencia) */}
@@ -580,6 +585,7 @@ function Index() {
             <a href="https://estherechile.store/pages/terminos-de-servicio">Términos de Servicio</a>
             <a href="https://estherechile.store/pages/politica-de-reembolso-y-devoluciones">Política de Reembolso y Devoluciones</a>
             <a href="https://estherechile.store/pages/politicas-de-envio">Política de Envío</a>
+            <a href="https://estherechile.store/pages/politica-de-privacidad">Política de Privacidad</a>
           </div>
           <div className="lp-footer-disc">
             <p>© {new Date().getFullYear()} Estheré. Todos los derechos reservados. · Chile</p>
@@ -680,6 +686,8 @@ const LP_CSS = `
 .lp-price-img { max-width:340px; margin:0 auto 24px; }
 .lp-price-img img { width:100%; height:auto; display:block; border-radius:14px; }
 .lp-price-old { font-size:15px; color:var(--text-light); text-decoration:line-through; }
+.lp-price-top-text { font-family:'Montserrat',sans-serif; font-size:13px; letter-spacing:.05em; color:var(--text-dark); max-width:520px; margin:0 auto 18px; text-transform:uppercase; }
+.lp-price-cycle { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:var(--gold); margin:14px 0 8px; }
 .lp-price-new { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,6vw,54px); font-weight:600; color:var(--text-dark); line-height:1.1; margin:4px 0 22px; }
 .lp-pay-icons { margin-top:16px; display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; }
 .lp-pay-icon-img { height:28px; width:auto; object-fit:contain; }
