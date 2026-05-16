@@ -527,7 +527,7 @@ function Index() {
                 {/* ============================================================
                     ✅ COLAR AQUI O LINK DO CHECKOUT / CART SHOPIFY (CTA GARANTÍA)
                     ============================================================ */}
-                <a href={SHOPIFY_LINKS.CHECKOUT} className="btn btn-gold btn-placeholder">INSIRA O LINK AQUI</a>
+                <a href={BTN_LINKS.BOTAO_8_GARANTIA} className="btn btn-gold">Probar la Ingeniería Facial</a>
               </div>
             </div>
           </div>
