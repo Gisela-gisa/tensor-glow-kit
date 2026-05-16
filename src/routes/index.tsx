@@ -23,9 +23,9 @@ export const Route = createFileRoute("/")({
 });
 
 const IMG = {
-  pricePre: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1.png?v=1778927125",
+  pricePre: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1_1.png?v=1778955120",
   heroBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/8ED4C7D8-167B-45D1-A587-68A68FA61779_2.png?v=1778497777",
-  techHero: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5614.png?v=1778927125",
+  techHero: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5614_1.png?v=1778955104",
   benefitsImg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/Gemini_Generated_Image_3rzicp3rzicp3rzi.png?v=1778578838",
   smartChoice: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/C467FBDD-0016-4870-8602-6269410E7D6B_1.png?v=1778237191",
   results: [
@@ -39,7 +39,7 @@ const IMG = {
   ester: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5044_1.jpg?v=1778497770",
   isabel: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5016_2.png?v=1778602507",
   tuMomento: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5486_1.png?v=1778601525",
-  ctaBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1.png?v=1778927125",
+  ctaBg: "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/IMG_5616_1_1.png?v=1778955120",
   pay: [
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_3.png?v=1778241117",
     "https://cdn.shopify.com/s/files/1/0728/5673/1799/files/images_4.png?v=1778241117",
